@@ -86,7 +86,7 @@ Sebelum mulai mendesain, tentukan dulu:
 
 <img width="269" height="370" alt="image" src="https://github.com/user-attachments/assets/d5e9bc39-f73e-4f2a-b0e2-b05113459ee6" />
 
-7. Pilih interactiv Fill tool , kemudian klik sisi kiri objek dan tarik ke kanan
+7. Untuk mengatur warna pada objek Pilih interactiv Fill tool , kemudian klik sisi kiri objek dan tarik ke kanan
 
 <img width="40" height="520" alt="image" src="https://github.com/user-attachments/assets/9fd812ca-0052-49fa-bc3f-a6c1f9edc48f" />
 
