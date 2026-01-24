@@ -86,6 +86,15 @@ Sebelum mulai mendesain, tentukan dulu:
 
 <img width="269" height="370" alt="image" src="https://github.com/user-attachments/assets/d5e9bc39-f73e-4f2a-b0e2-b05113459ee6" />
 
+7. Pilih interactiv Fill tool , kemudian klik sisi kiri objek dan tarik ke kanan
+
+<img width="40" height="520" alt="image" src="https://github.com/user-attachments/assets/9fd812ca-0052-49fa-bc3f-a6c1f9edc48f" />
+
+<img width="263" height="373" alt="image" src="https://github.com/user-attachments/assets/43485c0d-29c7-430b-968e-8b079375362c" />
+
+<img width="263" height="373" alt="image" src="https://github.com/user-attachments/assets/6ba59679-51f2-45f1-b7e0-4d86a21a8fdc" />
+
+
 
 
 ---
