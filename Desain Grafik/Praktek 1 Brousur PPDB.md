@@ -123,6 +123,8 @@ Hasilnya :
 
 <img width="299" height="438" alt="image" src="https://github.com/user-attachments/assets/21c56c1c-d01f-45a2-84a0-da430afad511" />
 
+10. Objek Background terakhir membuat persegi panjang menggunakan Rectangle tools
+
 
 
 
