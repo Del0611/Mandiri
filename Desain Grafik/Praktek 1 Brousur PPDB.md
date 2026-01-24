@@ -92,6 +92,8 @@ Sebelum mulai mendesain, tentukan dulu:
 
 <img width="263" height="373" alt="image" src="https://github.com/user-attachments/assets/43485c0d-29c7-430b-968e-8b079375362c" />
 
+<img width="424" height="71" alt="image" src="https://github.com/user-attachments/assets/80c535a9-53ff-4ac3-a356-67a129de00cc" />
+
 <img width="520" height="617" alt="image" src="https://github.com/user-attachments/assets/8d34b2c9-2b23-418b-a410-12d90aa35d44" />
 
 
