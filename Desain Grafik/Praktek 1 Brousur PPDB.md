@@ -119,6 +119,9 @@ Hasilnya
 
 <img width="191" height="185" alt="image" src="https://github.com/user-attachments/assets/f0ffd423-3f2f-45d4-a8e2-7424b0a94f3b" />
 
+Hasilnya :
+
+<img width="299" height="438" alt="image" src="https://github.com/user-attachments/assets/21c56c1c-d01f-45a2-84a0-da430afad511" />
 
 
 
