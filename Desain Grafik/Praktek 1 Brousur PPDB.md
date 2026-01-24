@@ -30,6 +30,9 @@ Sebelum mulai mendesain, tentukan dulu:
    - Color Mode: CMYK
 4. Klik **OK**
 
+<img width="505" height="360" alt="image" src="https://github.com/user-attachments/assets/95de8c8e-b574-4e77-b1d1-f09dc2248dc8" />
+
+
 ---
 
 ## 3. Membuat Background
@@ -44,4 +47,5 @@ Sebelum mulai mendesain, tentukan dulu:
 
 ## 4. Menambahkan Judul PPDB
 1. Pilih **Text Tool (F8)**
-2. Ketik: 
+2. Ketik: Judul
+3. 
