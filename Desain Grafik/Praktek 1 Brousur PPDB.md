@@ -43,9 +43,10 @@ Sebelum mulai mendesain, tentukan dulu:
 <img width="283" height="384" alt="image" src="https://github.com/user-attachments/assets/70de86b4-69a5-4abe-ab25-d7337fa2a4a2" />
 
    
-3. Buat kotak menutupi seluruh halaman
+3. Membuat Objek pertama di mulai dengan Background
 
-<img width="253" height="372" alt="image" src="https://github.com/user-attachments/assets/972e4c58-d01e-4af1-8e1d-da98caaa0c39" /> Buat objek background yang pertama di buat 
+<img width="253" height="372" alt="image" src="https://github.com/user-attachments/assets/972e4c58-d01e-4af1-8e1d-da98caaa0c39" /> 
+
 
 Buat retangle/Kotak seperti ukuran pada gambar brousur contoh
 <img width="268" height="377" alt="image" src="https://github.com/user-attachments/assets/c9692048-75f1-43ce-b8c3-4f912c7198df" />
