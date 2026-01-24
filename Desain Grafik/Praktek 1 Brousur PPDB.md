@@ -53,6 +53,12 @@ Sebelum mulai mendesain, tentukan dulu:
 <img width="45" height="526" alt="image" src="https://github.com/user-attachments/assets/9b86326b-99ef-461e-bf3b-1a3a06a5aa59" />
 <img width="268" height="377" alt="image" src="https://github.com/user-attachments/assets/c9692048-75f1-43ce-b8c3-4f912c7198df" />
 
+5. Ambil warna dari objek menggunakan Color Eyesdroper kemudian warnai gambar mu
+
+<img width="44" height="524" alt="image" src="https://github.com/user-attachments/assets/c0e26fa0-acc8-49fd-8084-df978621db50" />
+
+<img width="259" height="366" alt="image" src="https://github.com/user-attachments/assets/f8b36843-3072-48e8-bd4e-966bf5f8d2b8" />
+
 
 
    
