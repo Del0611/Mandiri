@@ -70,16 +70,23 @@ Sebelum mulai mendesain, tentukan dulu:
 <img width="259" height="366" alt="image" src="https://github.com/user-attachments/assets/f8b36843-3072-48e8-bd4e-966bf5f8d2b8" />
 
    
-5. Ubah bentuk objek kotak mengikuti bentuk dari contoh brosur menggunakan Shape tool, Klik kanan Objek kotak kemudian pilih "Convert to Curves"
+6. Ubah bentuk objek kotak mengikuti bentuk dari contoh brosur menggunakan Shape tool, Klik kanan Objek kotak kemudian pilih "Convert to Curves" 
 
 <img width="39" height="519" alt="image" src="https://github.com/user-attachments/assets/84b37117-9e82-4af6-acda-f7e856517650" />
 
 <img width="493" height="737" alt="image" src="https://github.com/user-attachments/assets/edd6ed61-39de-4433-b5df-2798222c8ca6" />
 
+7. ikuti tahapan tahapan yang ada pada gambar, klik 2x line atau garis yang ada pada objek, kemudian tarik titik objek tadi naik sedikit ke atas, ikuti instruksi gambar
+
+<img width="264" height="368" alt="image" src="https://github.com/user-attachments/assets/1981a713-5bb2-4231-b193-246ce02beb19" />
+
+<img width="264" height="372" alt="image" src="https://github.com/user-attachments/assets/3820d81a-098b-4fe2-8756-147e62220c3d" />
+
+<img width="269" height="377" alt="image" src="https://github.com/user-attachments/assets/b158bcbe-0176-42c8-8870-f19c39bb54ad" />
+
+<img width="269" height="370" alt="image" src="https://github.com/user-attachments/assets/d5e9bc39-f73e-4f2a-b0e2-b05113459ee6" />
 
 
-
-7. Klik kanan warna **X** untuk menghilangkan outline
 
 ---
 
