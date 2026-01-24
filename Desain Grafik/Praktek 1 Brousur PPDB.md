@@ -96,6 +96,11 @@ Sebelum mulai mendesain, tentukan dulu:
 
 <img width="520" height="617" alt="image" src="https://github.com/user-attachments/assets/8d34b2c9-2b23-418b-a410-12d90aa35d44" />
 
+Hasilnya 
+
+<img width="522" height="373" alt="image" src="https://github.com/user-attachments/assets/e1fd7040-3ab6-49a0-88d3-11ff5c854ae7" />
+
+
 
 
 
