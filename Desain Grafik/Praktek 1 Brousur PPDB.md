@@ -50,6 +50,7 @@ Sebelum mulai mendesain, tentukan dulu:
 
 4. Buat retangle/Kotak seperti ukuran pada gambar brousur contoh
 
+<img width="45" height="526" alt="image" src="https://github.com/user-attachments/assets/9b86326b-99ef-461e-bf3b-1a3a06a5aa59" />
 <img width="268" height="377" alt="image" src="https://github.com/user-attachments/assets/c9692048-75f1-43ce-b8c3-4f912c7198df" />
 
 
