@@ -37,11 +37,17 @@ Sebelum mulai mendesain, tentukan dulu:
 
 ## 3. Membuat Background
 1. Pilih **Rectangle Tool (F6)**
-2. Buat kotak menutupi seluruh halaman
-3. Beri warna background:
+
+<img width="45" height="526" alt="image" src="https://github.com/user-attachments/assets/9b86326b-99ef-461e-bf3b-1a3a06a5aa59" />
+
+<img width="283" height="384" alt="image" src="https://github.com/user-attachments/assets/70de86b4-69a5-4abe-ab25-d7337fa2a4a2" />
+
+   
+3. Buat kotak menutupi seluruh halaman
+4. Beri warna background:
    - Gunakan **Uniform Fill**
    - Atau **Fountain Fill** untuk gradasi
-4. Klik kanan warna **X** untuk menghilangkan outline
+5. Klik kanan warna **X** untuk menghilangkan outline
 
 ---
 
