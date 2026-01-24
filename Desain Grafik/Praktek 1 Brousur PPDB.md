@@ -48,7 +48,8 @@ Sebelum mulai mendesain, tentukan dulu:
 <img width="253" height="372" alt="image" src="https://github.com/user-attachments/assets/972e4c58-d01e-4af1-8e1d-da98caaa0c39" /> 
 
 
-Buat retangle/Kotak seperti ukuran pada gambar brousur contoh
+4. Buat retangle/Kotak seperti ukuran pada gambar brousur contoh
+
 <img width="268" height="377" alt="image" src="https://github.com/user-attachments/assets/c9692048-75f1-43ce-b8c3-4f912c7198df" />
 
 
