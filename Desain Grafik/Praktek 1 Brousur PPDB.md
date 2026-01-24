@@ -13,6 +13,12 @@ Sebelum mulai mendesain, tentukan dulu:
 - Target: Calon siswa & orang tua
 - Warna utama: Sesuai identitas sekolah
 
+<img width="226" height="164" alt="image" src="https://github.com/user-attachments/assets/dd73115d-c996-4531-96fc-609fbcf8566c" />
+
+<img width="406" height="439" alt="image" src="https://github.com/user-attachments/assets/8ab5e947-2d84-414e-94cb-ebe5304f56e0" />
+
+
+
 👉 Contoh konsep:
 > Poster PPDB Sekolah dengan warna biru dan putih, tampilan rapi dan formal.
 
