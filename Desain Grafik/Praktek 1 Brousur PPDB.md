@@ -101,6 +101,26 @@ Hasilnya
 <img width="522" height="373" alt="image" src="https://github.com/user-attachments/assets/e1fd7040-3ab6-49a0-88d3-11ff5c854ae7" />
 
 
+8. Membuat objek berikutnya, Ikuti instruksi gambar
+
+<img width="273" height="390" alt="image" src="https://github.com/user-attachments/assets/60e99026-9dab-4ec7-9cf9-c32b10bf12f4" />
+
+<img width="38" height="517" alt="image" src="https://github.com/user-attachments/assets/f1a3488c-fcb3-476f-a28d-c4014cd86e4b" />
+
+<img width="289" height="405" alt="image" src="https://github.com/user-attachments/assets/c0bcff07-79f6-42bf-a5e4-8d931e95e1f4" />
+
+9. Setelah membuat 4 Objek kotak, rotasikan objek menjadi berbentuk belah ketupat menggunakan tools pick tool, Klik 1 salah satu objek kotak kemudian bila sudah terseleksi klik kiri 1x tanda x yang ada di tengah tengah objek, setelah itu klik kiri tanhan ujung sudut objek setelah itu putar objek hingga sesuai dengan belah ketupat agar lebih proporsi tahan tombol control kemudian putar objeknya
+
+<img width="36" height="523" alt="image" src="https://github.com/user-attachments/assets/be918492-22f8-4efe-bb22-0da307cfa65f" />
+
+<img width="136" height="148" alt="image" src="https://github.com/user-attachments/assets/e2d7b74c-f8df-4411-898b-da97e8e21641" />
+
+<img width="149" height="156" alt="image" src="https://github.com/user-attachments/assets/b0ea604b-d1b9-4ab1-9ff3-39ba06b32fe2" />
+
+<img width="191" height="185" alt="image" src="https://github.com/user-attachments/assets/f0ffd423-3f2f-45d4-a8e2-7424b0a94f3b" />
+
+
+
 
 
 
