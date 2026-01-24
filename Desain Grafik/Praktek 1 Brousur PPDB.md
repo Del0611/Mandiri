@@ -69,13 +69,17 @@ Sebelum mulai mendesain, tentukan dulu:
 
 <img width="259" height="366" alt="image" src="https://github.com/user-attachments/assets/f8b36843-3072-48e8-bd4e-966bf5f8d2b8" />
 
-
-
    
-5. Beri warna background:
-   - Gunakan **Uniform Fill**
-   - Atau **Fountain Fill** untuk gradasi
-6. Klik kanan warna **X** untuk menghilangkan outline
+5. Ubah bentuk objek kotak mengikuti bentuk dari contoh brosur menggunakan Shape tool, Klik kanan Objek kotak kemudian pilih "Convert to Curves"
+
+<img width="39" height="519" alt="image" src="https://github.com/user-attachments/assets/84b37117-9e82-4af6-acda-f7e856517650" />
+
+<img width="493" height="737" alt="image" src="https://github.com/user-attachments/assets/edd6ed61-39de-4433-b5df-2798222c8ca6" />
+
+
+
+
+7. Klik kanan warna **X** untuk menghilangkan outline
 
 ---
 
