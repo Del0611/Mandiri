@@ -22,7 +22,7 @@ Sebelum mulai mendesain, tentukan dulu:
 👉 Contoh konsep:
 > Poster PPDB Sekolah dengan warna biru dan putih, tampilan rapi dan formal.
 
-<img width="183" height="275" alt="image" src="https://github.com/user-attachments/assets/f0ed8495-3cbd-4081-82ed-2e48739da1f7" />
+<img width="366" height="550" alt="image" src="https://github.com/user-attachments/assets/f0ed8495-3cbd-4081-82ed-2e48739da1f7" />
 
 
 ---
