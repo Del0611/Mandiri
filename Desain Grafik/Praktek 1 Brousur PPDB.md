@@ -57,7 +57,6 @@ Sebelum mulai mendesain, tentukan dulu:
 
 <img width="44" height="524" alt="image" src="https://github.com/user-attachments/assets/c0e26fa0-acc8-49fd-8084-df978621db50" />
 
-Warna yang di ambil
 
 <img width="246" height="369" alt="image" src="https://github.com/user-attachments/assets/f0c9f5ac-12d2-4466-9c22-a095664a5a8d" />
 
