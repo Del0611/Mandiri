@@ -141,6 +141,19 @@ Hasilnya :
 
 11. Masukkan gambar ke dalam 3 Objek kotak yang sudah kita buat sebelumnya dengan cara, klik kanan salah satu gambar kemudian pilih PowerClip Inside, dan klik ke salah satu Objek kotak untuk memasukkan gambar ke dalam kotak, 
 
+<img width="445" height="512" alt="image" src="https://github.com/user-attachments/assets/6690620c-47c6-4c9c-8f3b-20ca40b9e7e2" />
+
+<img width="409" height="353" alt="image" src="https://github.com/user-attachments/assets/5e454092-75a2-478e-9b3f-516d14513388" />
+
+<img width="427" height="474" alt="image" src="https://github.com/user-attachments/assets/db5b6d55-cb33-41af-ad98-1b990dc4a57c" />
+
+<img width="197" height="188" alt="image" src="https://github.com/user-attachments/assets/46fa1ea9-1e98-4a92-9110-4dd06c815ccf" />
+
+12. Jika posisinya belum pas atau tidak cocok, pakai Pick Tool kemudian klik Edit dan cocokan gambar dengan objek kotaknya 
+
+<img width="363" height="92" alt="image" src="https://github.com/user-attachments/assets/e956cf0d-93ba-4c9d-8a22-b0d7dac2aef7" />
+
+<img width="359" height="322" alt="image" src="https://github.com/user-attachments/assets/79abca61-0317-4b84-97c5-44c10fa0aa8c" />
 
 
 
