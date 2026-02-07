@@ -160,4 +160,17 @@ Hasilnya :
 
 ---
 
+13. Selanjutnya Buatlah text isi dari brousur nya dengan cara memilih Text Tool, klik posisi tulisan kemudian tulis Text yang ingin di tulis, Untuk mengubah warna tulisan bisa seleksi semua text kemudian pilih warna yang ada di pallate, untuk jenis font bisa di atur di bagian jenis font, untuk ukuran font bisa di beri dengan angka atau dengan cara menarik huruf untuk di perbesar
+    
+
+<img width="34" height="516" alt="image" src="https://github.com/user-attachments/assets/a64b0219-e64e-43cf-acc9-14162aa299db" />
+
+<img width="359" height="197" alt="image" src="https://github.com/user-attachments/assets/d4816a25-6887-4c7c-8fcb-22f5548e6e40" />
+
+<img width="49" height="890" alt="image" src="https://github.com/user-attachments/assets/a88f5acc-fd97-4444-9fc3-9603e46ef699" />
+
+<img width="247" height="61" alt="image" src="https://github.com/user-attachments/assets/bdb09f4d-35ab-485b-b872-2dd92df0acea" />
+
+<img width="574" height="82" alt="image" src="https://github.com/user-attachments/assets/764b2fcf-bf4e-4976-a6f7-6f34a2209ff3" />
+
 
