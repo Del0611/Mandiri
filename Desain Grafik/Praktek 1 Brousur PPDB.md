@@ -139,7 +139,7 @@ Hasilnya :
 <img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/a63417dd-9ec1-4966-915f-3ff06abecf23" />
 <img width="713" height="636" alt="image" src="https://github.com/user-attachments/assets/f436a58a-d5f4-4378-98b1-dba76f387b7c" />
 
-
+11. Masukkan gambar ke dalam 3 Objek kotak yang sudah kita buat sebelumnya dengan cara, klik kanan salah satu gambar kemudian pilih PowerClip Inside, dan klik ke salah satu Objek kotak untuk memasukkan gambar ke dalam kotak, 
 
 
 
