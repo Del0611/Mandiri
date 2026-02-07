@@ -156,20 +156,6 @@ Hasilnya :
 
 <img width="359" height="322" alt="image" src="https://github.com/user-attachments/assets/79abca61-0317-4b84-97c5-44c10fa0aa8c" />
 
-
-
-
-
-
-
-
-
-
-
-
 ---
 
-## 4. Menambahkan Judul PPDB
-1. Pilih **Text Tool (F8)**
-2. Ketik: Judul
-3. 
+
