@@ -123,7 +123,29 @@ Hasilnya :
 
 <img width="299" height="438" alt="image" src="https://github.com/user-attachments/assets/21c56c1c-d01f-45a2-84a0-da430afad511" />
 
-10. Objek Background terakhir membuat persegi panjang menggunakan Rectangle tools
+10. Copy aset aset gambar yang akan di gunakan, klik kanan di gambarnya kemudian Control + V di CorelDraw nya
+
+<img width="407" height="367" alt="image" src="https://github.com/user-attachments/assets/e717ebf3-1ae4-4128-88e2-390ad7dc68ff" />
+<img width="202" height="142" alt="image" src="https://github.com/user-attachments/assets/a4d65428-6cd4-41eb-bea4-926b38b65169" />
+<img width="202" height="246" alt="image" src="https://github.com/user-attachments/assets/c6446f4a-f430-4087-b643-d94fe4ede0bd" />
+<img width="498" height="279" alt="image" src="https://github.com/user-attachments/assets/a26e2ab0-f5dc-47b0-a8ac-d3b8a6e19d3b" />
+<img width="145" height="138" alt="image" src="https://github.com/user-attachments/assets/591fb97f-c642-4863-8622-256cc5eae797" />
+<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/c4d1c404-7fc8-496d-aad6-417c2c6534ae" />
+<img width="638" height="640" alt="image" src="https://github.com/user-attachments/assets/28651fa2-cad1-4378-81a9-ac222c0bc6c5" />
+<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/19f63b83-046e-4021-b68b-32116c5f02c4" />
+<img width="648" height="643" alt="image" src="https://github.com/user-attachments/assets/9422d26b-bf72-4ec4-87b2-8c77fca68c57" />
+<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/73e14622-ed26-4b30-89cc-b3e9d8cac61a" />
+<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/7a901563-e6c5-41c0-8891-3ee07bc49947" />
+<img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/a63417dd-9ec1-4966-915f-3ff06abecf23" />
+<img width="713" height="636" alt="image" src="https://github.com/user-attachments/assets/f436a58a-d5f4-4378-98b1-dba76f387b7c" />
+
+
+
+
+
+
+
+
 
 
 
