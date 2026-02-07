@@ -174,4 +174,9 @@ Hasilnya :
 
 <img width="574" height="82" alt="image" src="https://github.com/user-attachments/assets/764b2fcf-bf4e-4976-a6f7-6f34a2209ff3" />
 
+14. Sesuaikan semua text dengan informasi berisi PPDB, Lakukan secara kreatif
+
+<img width="227" height="297" alt="image" src="https://github.com/user-attachments/assets/38e37f09-be9a-4dee-8291-075ff3fdcfe2" />
+
+<img width="424" height="594" alt="image" src="https://github.com/user-attachments/assets/ee01988d-9c2f-41fd-aaa0-35c1318f70af" />
 
