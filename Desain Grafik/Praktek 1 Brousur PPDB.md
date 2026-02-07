@@ -150,11 +150,13 @@ Hasilnya :
 
 <img width="197" height="188" alt="image" src="https://github.com/user-attachments/assets/46fa1ea9-1e98-4a92-9110-4dd06c815ccf" />
 
-12. Jika posisinya belum pas atau tidak cocok, pakai Pick Tool kemudian klik Edit dan cocokan gambar dengan objek kotaknya 
+12. Jika posisinya belum pas atau tidak cocok, pakai Pick Tool kemudian klik Edit dan cocokan gambar dengan objek kotaknya, jika sudah selesai mengedit bisa menekan Finish
 
 <img width="363" height="92" alt="image" src="https://github.com/user-attachments/assets/e956cf0d-93ba-4c9d-8a22-b0d7dac2aef7" />
 
 <img width="359" height="322" alt="image" src="https://github.com/user-attachments/assets/79abca61-0317-4b84-97c5-44c10fa0aa8c" />
+
+<img width="83" height="51" alt="image" src="https://github.com/user-attachments/assets/5bc0710f-68bd-4164-800b-b421f721c322" />
 
 ---
 
