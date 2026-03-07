@@ -1,345 +1,274 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Kuis K3LH - 20 Soal</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-  }
-  h1 {
-    text-align: center;
-  }
-  .question {
-    margin-bottom: 20px;
-  }
-  .choices {
-    margin-left: 20px;
-    margin-top: 5px;
-  }
-  .choices label {
-    display: block;
-    margin: 4px 0;
-    cursor: pointer;
-  }
-  details summary {
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 5px;
-  }
-  #score {
-    margin-top: 30px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    text-align: center;
-    font-size: 18px;
-  }
-  button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Jaringan Komputer SMK</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #64748b;
+            --success: #22c55e;
+            --danger: #ef4444;
+            --bg: #f1f5f9;
+            --card: #ffffff;
+            --text: #0f172a;
+        }
 
-  details {
-  display: none;
-}
-.show-answers details {
-  display: block;
-}
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
 
-</style>
+        .quiz-card {
+            background: var(--card);
+            width: 100%;
+            max-width: 700px;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            border-bottom: 2px solid #f1f5f9;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 { font-size: 1.5rem; margin: 0; color: var(--primary); }
+        
+        #progress { font-weight: 600; color: var(--secondary); font-size: 0.9rem; }
+
+        .question-area h2 {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .options-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            border-color: var(--primary);
+            background-color: #eff6ff;
+        }
+
+        .option-btn.correct {
+            background-color: #dcfce7 !important;
+            border-color: var(--success) !important;
+            color: #166534;
+        }
+
+        .option-btn.wrong {
+            background-color: #fee2e2 !important;
+            border-color: var(--danger) !important;
+            color: #991b1b;
+        }
+
+        .footer {
+            margin-top: 30px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .control-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .control-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .hide { display: none; }
+
+        #result-screen { text-align: center; }
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .score-label { font-size: 0.8rem; text-transform: uppercase; }
+    </style>
 </head>
 <body>
-<h1>📋 Kuis K3LH - 20 Soal</h1>
 
-<div class="question">
-  <p><strong>1. Apa kepanjangan dari K3?</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q1" value="a"> a. Kesehatan, Keselamatan, dan Kebaikan</label>
-    <label><input type="radio" name="q1" value="b"> b. Kesehatan, Keselamatan, dan Kerja</label>
-    <label><input type="radio" name="q1" value="c"> c. Keselamatan, Kesehatan, dan Kerja</label>
-    <label><input type="radio" name="q1" value="d"> d. Keselamatan, Kebersihan, dan Kerja</label>
-  </div>
-  <details><summary>Jawaban</summary>c. Keselamatan, Kesehatan, dan Kerja</details>
-</div>
+    <div class="quiz-card">
+        <div id="quiz-screen">
+            <div class="header">
+                <h1>Kuis Jaringan</h1>
+                <div id="progress">Soal 1/40</div>
+            </div>
 
-<div class="question">
-  <p><strong>2. Tujuan utama dari penerapan K3 adalah...</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q2" value="a"> a. Menambah keuntungan perusahaan</label>
-    <label><input type="radio" name="q2" value="b"> b. Mengurangi biaya operasional</label>
-    <label><input type="radio" name="q2" value="c"> c. Menjamin keselamatan dan kesehatan pekerja</label>
-    <label><input type="radio" name="q2" value="d"> d. Memenuhi persyaratan hukum</label>
-  </div>
-  <details><summary>Jawaban</summary>c. Menjamin keselamatan dan kesehatan pekerja</details>
-</div>
+            <div class="question-area">
+                <h2 id="question-text">Memuat pertanyaan...</h2>
+                <div id="options-container" class="options-grid"></div>
+            </div>
 
-<div class="question">
-  <p><strong>3. Alat pelindung diri (APD) yang digunakan saat bekerja di ketinggian adalah...</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q3" value="a"> a. Helm proyek</label>
-    <label><input type="radio" name="q3" value="b"> b. Sepatu safety</label>
-    <label><input type="radio" name="q3" value="c"> c. Body harness</label>
-    <label><input type="radio" name="q3" value="d"> d. Masker</label>
-  </div>
-  <details><summary>Jawaban</summary>c. Body harness</details>
-</div>
+            <div class="footer">
+                <button id="next-btn" class="control-btn" disabled>Soal Berikutnya</button>
+            </div>
+        </div>
 
-<div class="question">
-  <p><strong>4. Limbah B3 adalah singkatan dari...</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q4" value="a"> a. Bahan Baku dan Barang Beracun</label>
-    <label><input type="radio" name="q4" value="b"> b. Bahan Berbahaya dan Beracun</label>
-    <label><input type="radio" name="q4" value="c"> c. Barang Bekas dan Basi</label>
-    <label><input type="radio" name="q4" value="d"> d. Bahan Bersih dan Berbahaya</label>
-  </div>
-  <details><summary>Jawaban</summary>b. Bahan Berbahaya dan Beracun</details>
-</div>
+        <div id="result-screen" class="hide">
+            <h1>Kuis Selesai!</h1>
+            <div class="score-circle">
+                <span id="final-score">0</span>
+                <span class="score-label">Skor</span>
+            </div>
+            <p id="result-message"></p>
+            <button onclick="location.reload()" class="control-btn" style="background: var(--secondary)">Coba Lagi</button>
+        </div>
+    </div>
 
-<div class="question">
-  <p><strong>5. Warna hijau dalam simbol K3 biasanya menunjukkan...</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q5" value="a"> a. Peringatan bahaya</label>
-    <label><input type="radio" name="q5" value="b"> b. Informasi alat pelindung diri</label>
-    <label><input type="radio" name="q5" value="c"> c. Jalur evakuasi atau keselamatan</label>
-    <label><input type="radio" name="q5" value="d"> d. Daerah terlarang</label>
-  </div>
-  <details><summary>Jawaban</summary>c. Jalur evakuasi atau keselamatan</details>
-</div>
+    <script>
+        const quizData = [
+            { q: "Topologi jaringan yang menghubungkan setiap perangkat ke satu perangkat pusat seperti Switch atau Hub disebut...", a: ["Topologi Bus", "Topologi Ring", "Topologi Star", "Topologi Mesh"], c: 2 },
+            { q: "Apa yang menjadi kelemahan utama dari Topologi Star?", a: ["Jika satu kabel client putus, seluruh jaringan mati", "Membutuhkan terminator", "Sangat sulit menambah perangkat baru", "Jika perangkat pusat rusak, seluruh jaringan lumpuh"], c: 3 },
+            { q: "Karakteristik utama dari Topologi Mesh (Full Mesh) adalah...", a: ["Setiap perangkat terhubung langsung ke semua perangkat lainnya", "Menggunakan satu kabel tunggal", "Data mengalir satu arah saja", "Memerlukan switch pusat"], c: 0 },
+            { q: "Dalam model hierarki jaringan 3 lapis, lapisan yang berfungsi sebagai tulang punggung (backbone) adalah...", a: ["Access Layer", "Core Layer", "Distribution Layer", "Network Layer"], c: 1 },
+            { q: "Topologi gabungan Star dan Bus yang sering digunakan di gedung bertingkat adalah...", a: ["Topologi Mesh", "Topologi Ring", "Topologi Tree", "Topologi Hybrid"], c: 2 },
+            { q: "Apa fungsi dari 'Terminator' pada Topologi Bus?", a: ["Memperkuat sinyal", "Menyerap sinyal agar tidak memantul", "Menghubungkan komputer secara serial", "Membagi IP otomatis"], c: 1 },
+            { q: "Di lapisan manakah pada model Cisco teknisi menerapkan ACL dan routing antar-VLAN?", a: ["Core Layer", "Access Layer", "Physical Layer", "Distribution Layer"], c: 3 },
+            { q: "Diagram yang menunjukkan alamat IP, nama host, dan VLAN disebut...", a: ["Diagram Fisik", "Diagram Alir", "Diagram Logis", "Denah Lokasi"], c: 2 },
+            { q: "Keunggulan utama dari Topologi Mesh adalah...", a: ["Biaya murah", "Instalasi mudah", "Redundansi/jalur cadangan tinggi", "Tidak butuh switch"], c: 2 },
+            { q: "Manakah informasi yang terdapat dalam Diagram Fisik?", a: ["Rentang IP", "Lokasi geografis dan letak rak server", "Protokol routing", "Nomor port VLAN"], c: 1 },
+            { q: "Mengapa perlu memulai pekerjaan dengan skenario bisnis atau analisis kebutuhan?", a: ["Agar biaya mahal", "Menentukan spesifikasi dan bandwidth yang tepat", "Aturan internasional", "Agar topologi rumit"], c: 1 },
+            { q: "Jenis kabel untuk menghubungkan PC ke Switch adalah...", a: ["Fiber Optic", "Copper Cross-Over", "Copper Straight-Through", "Kabel Coaxial"], c: 2 },
+            { q: "Apa fungsi utama Router dalam LAN dengan beberapa subnet?", a: ["Menghubungkan sesama PC satu divisi", "Penyimpan data", "Gateway menuju jaringan berbeda", "Memperkuat Wi-Fi"], c: 2 },
+            { q: "Jika Divisi Admin memiliki 10 host, Subnet Mask paling efisien adalah...", a: ["/24", "/28", "/27", "/30"], c: 1 },
+            { q: "Subnet mask /27 menyediakan jumlah usable IP sebanyak...", a: ["14 IP", "30 IP", "62 IP", "254 IP"], c: 1 },
+            { q: "Perintah Cisco untuk masuk ke Mode Privileged adalah...", a: ["configure terminal", "interface g0/0", "enable", "hostname"], c: 2 },
+            { q: "Apa fungsi perintah 'configure terminal'?", a: ["Simpan konfigurasi", "Masuk mode konfigurasi global", "Matikan router", "Lihat daftar IP"], c: 1 },
+            { q: "Perintah untuk memberikan identitas nama pada router adalah...", a: ["name-router", "identity", "hostname", "set-name"], c: 2 },
+            { q: "Mengapa perintah 'no shutdown' sangat penting?", a: ["Default port router mati", "Agar tidak overheat", "Hapus IP salah", "Dapat IP otomatis"], c: 0 },
+            { q: "Apa yang dimaksud dengan 'Default Gateway' di PC?", a: ["IP teman sedivisi", "IP Router untuk akses keluar jaringan", "Alamat website", "MAC Address"], c: 1 },
+            { q: "Dampak jika PC tidak mengisi Default Gateway?", a: ["PC tidak menyala", "Tidak bisa ke switch", "Hanya bisa komunikasi di satu subnet yang sama", "Langsung ke internet"], c: 2 },
+            { q: "Hasil pengujian 'Reply from...' menunjukkan...", a: ["Kabel putus", "Koneksi berhasil", "Router gangguan", "IP tidak terdaftar"], c: 1 },
+            { q: "Hasil ping 'Request Timed Out (RTO)' biasanya karena...", a: ["Salah konfigurasi IP/Gateway atau perangkat mati", "Jaringan terlalu cepat", "Tidak ada tabel routing", "Kabel salah"], c: 0 },
+            { q: "Pesan 'Destination Host Unreachable' berarti...", a: ["Switch mati", "Router tidak tahu jalur ke tujuan", "PC sedang sibuk", "Kabel power lepas"], c: 1 },
+            { q: "Fitur Packet Tracer untuk melihat pergerakan paket secara visual?", a: ["Realtime Mode", "Design Mode", "Simulation Mode", "Physical Mode"], c: 2 },
+            { q: "Mengapa /24 untuk 10 host dianggap tidak efisien?", a: ["Membuang banyak IP", "Koneksi lambat", "Kabel tidak kuat", "Router rusak"], c: 0 },
+            { q: "Urutan benar konfigurasi IP interface Router?", a: ["enable > interface > no shut > ip add", "enable > conf t > interface > ip add > no shut", "ip add > no shut > enable", "interface > enable"], c: 1 },
+            { q: "Fungsi simbol amplop (PDU) pada Simulation Mode?", a: ["Hapus konfigurasi", "Uji kirim paket data", "Ganti nama PC", "Cetak laporan"], c: 1 },
+            { q: "Lampu port Router berwarna merah menandakan...", a: ["Aktif", "Mati atau belum 'no shutdown'", "Collision", "Fiber Optic"], c: 1 },
+            { q: "Teknologi menghemat switch untuk membagi divisi?", a: ["VPN", "VLAN", "VNN", "V-Router"], c: 1 },
+            { q: "Komponen yang termasuk 'End Device'?", a: ["Router", "Switch", "Laptop/PC", "Access Point"], c: 2 },
+            { q: "Apa itu 'Subnetting'?", a: ["Gabung router", "Membagi jaringan besar jadi kecil", "Percepat LAN", "Sembunyikan IP"], c: 1 },
+            { q: "Kabel biru di Packet Tracer untuk konfigurasi awal?", a: ["Straight", "Cross", "Console", "Fiber"], c: 2 },
+            { q: "Apa arti 'IPv4 Address'?", a: ["Nama pengguna", "Alamat logis unik", "Kode pabrik", "Kecepatan data"], c: 1 },
+            { q: "Interface router untuk LAN kecepatan tinggi?", a: ["Serial", "Console", "GigabitEthernet", "Auxiliary"], c: 2 },
+            { q: "Mengapa setiap divisi sebaiknya beda subnet?", a: ["Agar kabel tak tertukar", "Keamanan dan manajemen trafik", "Router tak baca IP sama", "Biaya murah"], c: 1 },
+            { q: "Simbol '>' pada CLI Cisco menunjukkan...", a: ["User EXEC Mode", "Privileged EXEC Mode", "Global Config Mode", "Interface Mode"], c: 0 },
+            { q: "Ping gagal padahal IP benar, apa yang diperiksa?", a: ["Ganti kabel", "Default Gateway PC", "Hapus PC", "Hostname"], c: 1 },
+            { q: "Penulisan IP valid untuk /28?", a: ["192.168.1.1", "192.168.1.256", "192.168.1.300", "192.168.1.1.1"], c: 0 },
+            { q: "Manfaat utama Simulation Mode?", a: ["Internet stabil", "Lihat detail langkah paket data", "Tak perlu config IP", "Alat tak pernah error"], c: 1 }
+        ];
 
-<div class="question">
-  <p><strong>6. Siapa yang bertanggung jawab atas penerapan K3 di tempat kerja?</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q6" value="a"> a. Hanya manajer K3</label>
-    <label><input type="radio" name="q6" value="b"> b. Hanya atasan langsung</label>
-    <label><input type="radio" name="q6" value="c"> c. Semua pihak di tempat kerja</label>
-    <label><input type="radio" name="q6" value="d"> d. Hanya pekerja</label>
-  </div>
-  <details><summary>Jawaban</summary>c. Semua pihak di tempat kerja</details>
-</div>
+        let currentIdx = 0;
+        let score = 0;
 
-<div class="question">
-  <p><strong>7. APAR digunakan untuk...</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q7" value="a"> a. Mengukur tekanan udara</label>
-    <label><input type="radio" name="q7" value="b"> b. Mendeteksi kebocoran gas</label>
-    <label><input type="radio" name="q7" value="c"> c. Memadamkan kebakaran awal</label>
-    <label><input type="radio" name="q7" value="d"> d. Mencegah banjir</label>
-  </div>
-  <details><summary>Jawaban</summary>c. Memadamkan kebakaran awal</details>
-</div>
+        const qText = document.getElementById('question-text');
+        const optionsCont = document.getElementById('options-container');
+        const progress = document.getElementById('progress');
+        const nextBtn = document.getElementById('next-btn');
+        const quizScreen = document.getElementById('quiz-screen');
+        const resultScreen = document.getElementById('result-screen');
 
-<div class="question">
-  <p><strong>8. Bahan kimia harus disimpan di tempat yang...</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q8" value="a"> a. Terbuka agar mudah diakses</label>
-    <label><input type="radio" name="q8" value="b"> b. Dingin dan gelap</label>
-    <label><input type="radio" name="q8" value="c"> c. Sesuai dengan MSDS (Material Safety Data Sheet)</label>
-    <label><input type="radio" name="q8" value="d"> d. Dekat dengan sumber api</label>
-  </div>
-  <details><summary>Jawaban</summary>c. Sesuai dengan MSDS (Material Safety Data Sheet)</details>
-</div>
+        function loadQuestion() {
+            const data = quizData[currentIdx];
+            qText.innerText = data.q;
+            progress.innerText = `Soal ${currentIdx + 1}/${quizData.length}`;
+            optionsCont.innerHTML = '';
+            nextBtn.disabled = true;
 
-<div class="question">
-  <p><strong>9. Apa tindakan pertama saat terjadi kecelakaan kerja?</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q9" value="a"> a. Lapor ke HRD</label>
-    <label><input type="radio" name="q9" value="b"> b. Membawa korban ke rumah sakit</label>
-    <label><input type="radio" name="q9" value="c"> c. Menjauh dari lokasi</label>
-    <label><input type="radio" name="q9" value="d"> d. Mengamankan diri dan korban jika memungkinkan</label>
-  </div>
-  <details><summary>Jawaban</summary>d. Mengamankan diri dan korban jika memungkinkan</details>
-</div>
+            data.a.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.innerText = String.fromCharCode(65 + i) + ". " + opt;
+                btn.onclick = () => selectOption(btn, i);
+                optionsCont.appendChild(btn);
+            });
+        }
 
-<div class="question">
-  <p><strong>10. Apa yang dimaksud dengan ergonomi?</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q10" value="a"> a. Ilmu tentang api</label>
-    <label><input type="radio" name="q10" value="b"> b. Ilmu tentang kesehatan mental</label>
-    <label><input type="radio" name="q10" value="c"> c. Ilmu penyesuaian pekerjaan dengan manusia</label>
-    <label><input type="radio" name="q10" value="d"> d. Ilmu tentang penghematan energi</label>
-  </div>
-  <details><summary>Jawaban</summary>c. Ilmu penyesuaian pekerjaan dengan manusia</details>
-</div>
+        function selectOption(btn, index) {
+            const correctIdx = quizData[currentIdx].c;
+            const allBtns = document.querySelectorAll('.option-btn');
+            
+            if (index === correctIdx) {
+                btn.classList.add('correct');
+                score++;
+            } else {
+                btn.classList.add('wrong');
+                allBtns[correctIdx].classList.add('correct');
+            }
 
-<div class="question">
-  <p><strong>11. Jenis kebakaran yang disebabkan oleh cairan mudah terbakar adalah kebakaran kelas...?</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q11" value="a"> a. A</label>
-    <label><input type="radio" name="q11" value="b"> b. B</label>
-    <label><input type="radio" name="q11" value="c"> c. C</label>
-    <label><input type="radio" name="q11" value="d"> d. D</label>
-  </div>
-  <details><summary>Jawaban</summary>b. B</details>
-</div>
+            allBtns.forEach(b => b.disabled = true);
+            nextBtn.disabled = false;
+            
+            if (currentIdx === quizData.length - 1) {
+                nextBtn.innerText = "Lihat Hasil";
+            }
+        }
 
-<div class="question">
-  <p><strong>12. Tindakan preventif adalah...</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q12" value="a"> a. Tindakan sesudah kecelakaan</label>
-    <label><input type="radio" name="q12" value="b"> b. Tindakan untuk mengobati korban</label>
-    <label><input type="radio" name="q12" value="c"> c. Tindakan pencegahan agar kecelakaan tidak terjadi</label>
-    <label><input type="radio" name="q12" value="d"> d. Tindakan memperbaiki kerusakan</label>
-  </div>
-  <details><summary>Jawaban</summary>c. Tindakan pencegahan agar kecelakaan tidak terjadi</details>
-</div>
+        nextBtn.onclick = () => {
+            currentIdx++;
+            if (currentIdx < quizData.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        };
 
-<div class="question">
-  <p><strong>13. Simbol segitiga kuning menunjukkan...</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q13" value="a"> a. Larangan</label>
-    <label><input type="radio" name="q13" value="b"> b. Perintah</label>
-    <label><input type="radio" name="q13" value="c"> c. Peringatan</label>
-    <label><input type="radio" name="q13" value="d"> d. Informasi</label>
-  </div>
-  <details><summary>Jawaban</summary>c. Peringatan</details>
-</div>
+        function showResults() {
+            quizScreen.classList.add('hide');
+            resultScreen.classList.remove('hide');
+            document.getElementById('final-score').innerText = score;
+            
+            const msg = score >= 30 ? "Luar biasa! Kamu sudah siap untuk UKK!" : "Semangat! Pelajari lagi materi konfigurasinya.";
+            document.getElementById('result-message').innerText = msg;
+        }
 
-<div class="question">
-  <p><strong>14. Apa fungsi dari MSDS (Material Safety Data Sheet)?</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q14" value="a"> a. Daftar absen pekerja</label>
-    <label><input type="radio" name="q14" value="b"> b. Dokumen pengeluaran barang</label>
-    <label><input type="radio" name="q14" value="c"> c. Informasi tentang bahan kimia dan penanganannya</label>
-    <label><input type="radio" name="q14" value="d"> d. Formulir pengaduan</label>
-  </div>
-  <details><summary>Jawaban</summary>c. Informasi tentang bahan kimia dan penanganannya</details>
-</div>
-
-<div class="question">
-  <p><strong>15. Faktor utama penyebab kecelakaan kerja adalah...</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q15" value="a"> a. Alat yang rusak</label>
-    <label><input type="radio" name="q15" value="b"> b. Cuaca</label>
-    <label><input type="radio" name="q15" value="c"> c. Human error (kesalahan manusia)</label>
-    <label><input type="radio" name="q15" value="d"> d. Bencana alam</label>
-  </div>
-  <details><summary>Jawaban</summary>c. Human error (kesalahan manusia)</details>
-</div>
-
-<div class="question">
-  <p><strong>16. Yang termasuk dalam APD untuk mata adalah...</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q16" value="a"> a. Face shield</label>
-    <label><input type="radio" name="q16" value="b"> b. Masker</label>
-    <label><input type="radio" name="q16" value="c"> c. Sepatu boot</label>
-    <label><input type="radio" name="q16" value="d"> d. Kacamata safety</label>
-  </div>
-  <details><summary>Jawaban</summary>d. Kacamata safety</details>
-</div>
-
-<div class="question">
-  <p><strong>17. Lingkungan kerja yang aman harus bebas dari...</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q17" value="a"> a. Musik keras</label>
-    <label><input type="radio" name="q17" value="b"> b. Debu, asap, dan bahan berbahaya</label>
-    <label><input type="radio" name="q17" value="c"> c. Teknologi</label>
-    <label><input type="radio" name="q17" value="d"> d. Internet</label>
-  </div>
-  <details><summary>Jawaban</summary>b. Debu, asap, dan bahan berbahaya</details>
-</div>
-
-<div class="question">
-  <p><strong>18. Apa fungsi dari rambu K3?</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q18" value="a"> a. Menunjukkan arah parkir</label>
-    <label><input type="radio" name="q18" value="b"> b. Memperingatkan bahaya atau memberikan informasi keselamatan</label>
-    <label><input type="radio" name="q18" value="c"> c. Menunjukkan waktu kerja</label>
-    <label><input type="radio" name="q18" value="d"> d. Menunjukkan lokasi kantin</label>
-  </div>
-  <details><summary>Jawaban</summary>b. Memperingatkan bahaya atau memberikan informasi keselamatan</details>
-</div>
-
-<div class="question">
-  <p><strong>19. Apa yang dimaksud dengan risiko dalam K3?</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q19" value="a"> a. Kemungkinan terjadinya bahaya atau kerugian</label>
-    <label><input type="radio" name="q19" value="b"> b. Biaya produksi perusahaan</label>
-    <label><input type="radio" name="q19" value="c"> c. Jumlah pekerja di tempat kerja</label>
-    <label><input type="radio" name="q19" value="d"> d. Lama waktu kerja</label>
-  </div>
-  <details><summary>Jawaban</summary>a. Kemungkinan terjadinya bahaya atau kerugian</details>
-</div>
-
-<div class="question">
-  <p><strong>20. Apa tujuan dari pelatihan K3?</strong></p>
-  <div class="choices">
-    <label><input type="radio" name="q20" value="a"> a. Meningkatkan produktivitas kerja</label>
-    <label><input type="radio" name="q20" value="b"> b. Mengurangi risiko kecelakaan dan meningkatkan kesadaran keselamatan</label>
-    <label><input type="radio" name="q20" value="c"> c. Menambah gaji pekerja</label>
-    <label><input type="radio" name="q20" value="d"> d. Mengatur jadwal kerja</label>
-  </div>
-  <details><summary>Jawaban</summary>b. Mengurangi risiko kecelakaan dan meningkatkan kesadaran keselamatan</details>
-</div>
-
-<button onclick="calculateScore()">Hitung Skor</button>
-
-<div id="score"></div>
-
-<script>
-  function calculateScore() {
-    const correctAnswers = {
-      q1: 'c',
-      q2: 'c',
-      q3: 'c',
-      q4: 'b',
-      q5: 'c',
-      q6: 'c',
-      q7: 'c',
-      q8: 'c',
-      q9: 'd',
-      q10: 'c',
-      q11: 'b',
-      q12: 'c',
-      q13: 'c',
-      q14: 'c',
-      q15: 'c',
-      q16: 'd',
-      q17: 'b',
-      q18: 'b',
-      q19: 'a',
-      q20: 'b'
-    };
-
-    let score = 0;
-    const totalQuestions = Object.keys(correctAnswers).length;
-
-    for (let i = 1; i <= totalQuestions; i++) {
-      const selected = document.querySelector(`input[name="q${i}"]:checked`);
-      if (selected && selected.value === correctAnswers[`q${i}`]) {
-        score++;
-      }
-    }
-
-    const scoreDiv = document.getElementById('score');
-    scoreDiv.innerHTML = `<strong>Skor Anda: ${score} dari ${totalQuestions}</strong><br>${getFeedback(score, totalQuestions)}`;
-
-    // Tampilkan semua jawaban (details)
-    document.body.classList.add('show-answers');
-  }
-
-  function getFeedback(score, total) {
-    const percentage = (score / total) * 100;
-    if (percentage === 100) {
-      return "🎉 Luar biasa! Anda menjawab semua soal dengan benar.";
-    } else if (percentage >= 80) {
-      return "👍 Sangat baik! Anda memahami K3 dengan baik.";
-    } else if (percentage >= 60) {
-      return "🙂 Cukup baik, tapi masih bisa ditingkatkan.";
-    } else {
-      return "⚠️ Perlu belajar lebih lanjut tentang K3.";
-    }
-  }
-</script>
-
+        loadQuestion();
+    </script>
 </body>
 </html>
-  
