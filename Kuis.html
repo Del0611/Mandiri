@@ -49,25 +49,262 @@
   <script>
     // JSON disimpan langsung di sini
     const quizData = {
-      matematika: [
-        {
-          question: "2 + 2 = ?",
-          options: ["3", "4", "5", "6"],
-          answer: 1
-        },
-        {
-          question: "10 - 5 = ?",
-          options: ["2", "3", "5", "8"],
-          answer: 2
-        }
-      ],
-      sejarah: [
-        {
-          question: "Siapa proklamator Indonesia?",
-          options: ["Soeharto", "Jokowi", "Soekarno", "Habibie"],
-          answer: 2
-        }
-      ]
+      matematika: 
+        [
+  {
+    "question": "Apa kepanjangan dari LAN?",
+    "options": ["Local Area Network", "Large Area Network", "Long Area Network", "Limited Area Network"],
+    "answer": 0
+  },
+  {
+    "question": "Perangkat yang berfungsi menghubungkan beberapa jaringan disebut?",
+    "options": ["Switch", "Router", "Hub", "Repeater"],
+    "answer": 1
+  },
+  {
+    "question": "Alamat unik pada setiap perangkat jaringan disebut?",
+    "options": ["IP Address", "Subnet", "Gateway", "DNS"],
+    "answer": 0
+  },
+  {
+    "question": "Apa fungsi dari DNS?",
+    "options": ["Menyimpan file", "Mengubah domain menjadi IP", "Menghubungkan jaringan", "Mengamankan jaringan"],
+    "answer": 1
+  },
+  {
+    "question": "Topologi jaringan berbentuk lingkaran disebut?",
+    "options": ["Star", "Bus", "Ring", "Mesh"],
+    "answer": 2
+  },
+  {
+    "question": "Perangkat untuk memperkuat sinyal disebut?",
+    "options": ["Router", "Repeater", "Switch", "Bridge"],
+    "answer": 1
+  },
+  {
+    "question": "Apa fungsi utama switch?",
+    "options": ["Menghubungkan jaringan berbeda", "Mengatur lalu lintas data dalam LAN", "Memperkuat sinyal", "Menyimpan data"],
+    "answer": 1
+  },
+  {
+    "question": "Apa kepanjangan dari WAN?",
+    "options": ["Wide Area Network", "Wireless Area Network", "World Area Network", "Web Area Network"],
+    "answer": 0
+  },
+  {
+    "question": "Media transmisi menggunakan cahaya adalah?",
+    "options": ["UTP", "Koaksial", "Fiber Optic", "STP"],
+    "answer": 2
+  },
+  {
+    "question": "Perintah untuk mengecek koneksi jaringan adalah?",
+    "options": ["ping", "dir", "copy", "del"],
+    "answer": 0
+  },
+  {
+    "question": "Apa itu IP Address?",
+    "options": ["Alamat email", "Alamat unik perangkat", "Nama komputer", "Jenis jaringan"],
+    "answer": 1
+  },
+  {
+    "question": "Topologi paling umum digunakan di LAN adalah?",
+    "options": ["Bus", "Ring", "Star", "Mesh"],
+    "answer": 2
+  },
+  {
+    "question": "Perangkat pusat pada topologi star adalah?",
+    "options": ["Router", "Switch", "Repeater", "Modem"],
+    "answer": 1
+  },
+  {
+    "question": "Apa fungsi modem?",
+    "options": ["Menghubungkan ke internet", "Menyimpan data", "Menguatkan sinyal", "Mengatur IP"],
+    "answer": 0
+  },
+  {
+    "question": "Jenis kabel LAN yang paling umum adalah?",
+    "options": ["Koaksial", "UTP", "Fiber", "STP"],
+    "answer": 1
+  },
+  {
+    "question": "Kepanjangan dari HTTP adalah?",
+    "options": ["HyperText Transfer Protocol", "High Transfer Protocol", "Hyper Tool Protocol", "Host Transfer Protocol"],
+    "answer": 0
+  },
+  {
+    "question": "Apa fungsi firewall?",
+    "options": ["Mempercepat internet", "Mengamankan jaringan", "Menyimpan data", "Menghubungkan perangkat"],
+    "answer": 1
+  },
+  {
+    "question": "Perangkat untuk menghubungkan komputer ke jaringan adalah?",
+    "options": ["CPU", "NIC", "RAM", "HDD"],
+    "answer": 1
+  },
+  {
+    "question": "Apa itu MAC Address?",
+    "options": ["Alamat email", "Alamat fisik perangkat", "Alamat IP", "Nama jaringan"],
+    "answer": 1
+  },
+  {
+    "question": "Berapa jumlah bit pada IPv4?",
+    "options": ["16", "32", "64", "128"],
+    "answer": 1
+  },
+
+  {
+    "question": "Apa fungsi DHCP?",
+    "options": ["Memberi IP otomatis", "Mengamankan jaringan", "Menyimpan data", "Menghubungkan jaringan"],
+    "answer": 0
+  },
+  {
+    "question": "Perintah untuk melihat konfigurasi IP di Windows?",
+    "options": ["ipconfig", "ping", "dir", "netstat"],
+    "answer": 0
+  },
+  {
+    "question": "Apa itu subnet mask?",
+    "options": ["Pembagi jaringan", "Alamat IP", "Nama domain", "Firewall"],
+    "answer": 0
+  },
+  {
+    "question": "Topologi dengan banyak jalur disebut?",
+    "options": ["Star", "Mesh", "Bus", "Ring"],
+    "answer": 1
+  },
+  {
+    "question": "Apa fungsi bridge?",
+    "options": ["Menghubungkan dua jaringan", "Menyimpan data", "Mengatur IP", "Menguatkan sinyal"],
+    "answer": 0
+  },
+  {
+    "question": "Apa itu bandwidth?",
+    "options": ["Kecepatan transfer data", "Ukuran kabel", "Alamat IP", "Jenis jaringan"],
+    "answer": 0
+  },
+  {
+    "question": "Apa kepanjangan dari FTP?",
+    "options": ["File Transfer Protocol", "Fast Transfer Protocol", "File Tool Protocol", "Free Transfer Protocol"],
+    "answer": 0
+  },
+  {
+    "question": "Port default HTTP adalah?",
+    "options": ["21", "22", "80", "443"],
+    "answer": 2
+  },
+  {
+    "question": "Port default HTTPS adalah?",
+    "options": ["80", "21", "443", "25"],
+    "answer": 2
+  },
+  {
+    "question": "Apa itu router?",
+    "options": ["Penghubung jaringan", "Penyimpan data", "Penguat sinyal", "Antivirus"],
+    "answer": 0
+  },
+
+  {
+    "question": "Apa itu switch unmanaged?",
+    "options": ["Switch tanpa konfigurasi", "Switch mahal", "Switch besar", "Switch wireless"],
+    "answer": 0
+  },
+  {
+    "question": "Apa fungsi access point?",
+    "options": ["Menghubungkan wifi", "Menyimpan data", "Mengatur IP", "Firewall"],
+    "answer": 0
+  },
+  {
+    "question": "Apa itu SSID?",
+    "options": ["Nama wifi", "Password", "IP address", "Router"],
+    "answer": 0
+  },
+  {
+    "question": "Apa itu latency?",
+    "options": ["Waktu tunda jaringan", "Kecepatan tinggi", "Ukuran file", "Jenis kabel"],
+    "answer": 0
+  },
+  {
+    "question": "Apa fungsi proxy?",
+    "options": ["Perantara internet", "Antivirus", "Penyimpan data", "Penguat sinyal"],
+    "answer": 0
+  },
+  {
+    "question": "Apa itu VLAN?",
+    "options": ["Jaringan virtual", "Kabel LAN", "Router", "IP address"],
+    "answer": 0
+  },
+  {
+    "question": "Apa fungsi kabel straight?",
+    "options": ["Perangkat berbeda", "Perangkat sama", "Internet", "Server"],
+    "answer": 0
+  },
+  {
+    "question": "Apa fungsi kabel crossover?",
+    "options": ["Perangkat sama", "Perangkat berbeda", "Server", "Internet"],
+    "answer": 0
+  },
+  {
+    "question": "Apa itu server?",
+    "options": ["Penyedia layanan", "Pengguna", "Router", "Switch"],
+    "answer": 0
+  },
+  {
+    "question": "Apa itu client?",
+    "options": ["Pengguna layanan", "Server", "Router", "Switch"],
+    "answer": 0
+  },
+
+  {
+    "question": "Apa fungsi OSI Layer?",
+    "options": ["Model jaringan", "Kabel", "Router", "Server"],
+    "answer": 0
+  },
+  {
+    "question": "Layer ke-7 OSI adalah?",
+    "options": ["Application", "Network", "Data Link", "Transport"],
+    "answer": 0
+  },
+  {
+    "question": "Layer ke-3 OSI adalah?",
+    "options": ["Network", "Application", "Session", "Physical"],
+    "answer": 0
+  },
+  {
+    "question": "Apa itu TCP?",
+    "options": ["Protokol jaringan", "Kabel", "Router", "IP"],
+    "answer": 0
+  },
+  {
+    "question": "Apa itu UDP?",
+    "options": ["Protokol jaringan", "Server", "Router", "Switch"],
+    "answer": 0
+  },
+  {
+    "question": "Apa itu ping?",
+    "options": ["Cek koneksi", "Download", "Upload", "Hapus file"],
+    "answer": 0
+  },
+  {
+    "question": "Apa itu traceroute?",
+    "options": ["Melacak jalur jaringan", "Download", "Upload", "Firewall"],
+    "answer": 0
+  },
+  {
+    "question": "Apa itu hosting?",
+    "options": ["Tempat website", "Router", "Switch", "IP"],
+    "answer": 0
+  },
+  {
+    "question": "Apa itu domain?",
+    "options": ["Nama website", "IP", "Server", "Router"],
+    "answer": 0
+  },
+  {
+    "question": "Apa fungsi CDN?",
+    "options": ["Mempercepat akses", "Menyimpan data", "Firewall", "Router"],
+    "answer": 0
+  }
+]
     };
 
     let questions = [];
