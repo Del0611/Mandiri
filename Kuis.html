@@ -2,55 +2,133 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Kuis Pilihan Ganda</title>
+  <title>Kuis TKJ</title>
+
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #menu, #quiz-container, #result {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 30px;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       text-align: center;
-      padding: 20px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 15px;
+      font-size: 16px;
     }
 
     button {
-      display: block;
-      margin: 10px auto;
-      padding: 10px;
-      width: 220px;
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      font-size: 16px;
       cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #00aaff, #005eff);
+    }
+
+    #options button {
+      background: rgba(255,255,255,0.1);
+      margin: 8px 0;
+    }
+
+    #options button:hover {
+      background: rgba(255,255,255,0.2);
     }
 
     #quiz-container {
       display: none;
     }
+
+    #result {
+      display: none;
+    }
+
+    #progress {
+      margin-bottom: 10px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
+
 <body>
 
-  <h1>Kuis Pilihan Ganda</h1>
-
-  <!-- MENU PILIH KUIS -->
+  <!-- MENU -->
   <div id="menu">
+    <h1>Kuis TKJ</h1>
     <select id="quizSelect">
-      <option value="matematika">Matematika</option>
-      <option value="sejarah">Sejarah</option>
+      <option value="tkj">Dasar TKJ</option>
     </select>
     <button onclick="startQuiz()">Mulai</button>
   </div>
 
-  <!-- KUIS -->
+  <!-- QUIZ -->
   <div id="quiz-container">
+    <p id="progress"></p>
     <h2 id="question"></h2>
     <div id="options"></div>
     <button onclick="nextQuestion()">Next</button>
   </div>
 
-  <!-- HASIL -->
-  <div id="result" style="display:none;"></div>
+  <!-- RESULT -->
+  <div id="result"></div>
 
   <script>
-    // JSON disimpan langsung di sini
     const quizData = {
-      matematika: 
-        [
+      tkj: [
   {
     "question": "Apa kepanjangan dari LAN?",
     "options": ["Local Area Network", "Large Area Network", "Long Area Network", "Limited Area Network"],
@@ -326,7 +404,10 @@
 
     function showQuestion() {
       const q = questions[currentIndex];
+
       document.getElementById("question").innerText = q.question;
+      document.getElementById("progress").innerText =
+        `Soal ${currentIndex + 1} / ${questions.length}`;
 
       const optionsDiv = document.getElementById("options");
       optionsDiv.innerHTML = "";
@@ -334,15 +415,25 @@
       q.options.forEach((opt, i) => {
         const btn = document.createElement("button");
         btn.innerText = String.fromCharCode(65 + i) + ". " + opt;
-        btn.onclick = () => checkAnswer(i);
+
+        btn.onclick = () => {
+          if (i === q.answer) {
+            btn.style.background = "#00ff88";
+            score++;
+          } else {
+            btn.style.background = "#ff4d4d";
+          }
+
+          disableOptions();
+        };
+
         optionsDiv.appendChild(btn);
       });
     }
 
-    function checkAnswer(selected) {
-      if (selected === questions[currentIndex].answer) {
-        score++;
-      }
+    function disableOptions() {
+      const buttons = document.querySelectorAll("#options button");
+      buttons.forEach(btn => btn.disabled = true);
     }
 
     function nextQuestion() {
@@ -356,10 +447,13 @@
 
     function showResult() {
       document.getElementById("quiz-container").style.display = "none";
+
       const resultDiv = document.getElementById("result");
       resultDiv.style.display = "block";
-      resultDiv.innerHTML = `<h2>Skor: ${score} / ${questions.length}</h2>
-                             <button onclick="location.reload()">Ulangi</button>`;
+      resultDiv.innerHTML = `
+        <h2>Skor: ${score} / ${questions.length}</h2>
+        <button onclick="location.reload()">Ulangi</button>
+      `;
     }
   </script>
 
