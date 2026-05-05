@@ -1,461 +1,277 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Kuis TKJ</title>
+<meta charset="UTF-8">
+<title>CBT TKJ</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* {margin:0;padding:0;box-sizing:border-box;}
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #1e1e2f, #2a2a40);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#1e1e2f,#2a2a40);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
 
-    #menu, #quiz-container, #result {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
-      border-radius: 16px;
-      padding: 30px;
-      width: 90%;
-      max-width: 420px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      text-align: center;
-      animation: fadeIn 0.5s ease;
-    }
+.container {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  padding:25px;
+  border-radius:15px;
+  width:90%;
+  max-width:420px;
+  text-align:center;
+}
 
-    h1 {
-      margin-bottom: 20px;
-    }
+button {
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(135deg,#00c6ff,#0072ff);
+  color:white;
+  cursor:pointer;
+}
 
-    h2 {
-      margin-bottom: 15px;
-    }
+#options button {
+  background:rgba(255,255,255,0.1);
+}
 
-    select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-      border: none;
-      margin-bottom: 15px;
-      font-size: 16px;
-    }
+#timer {
+  color:#ffcc00;
+  margin-bottom:10px;
+}
 
-    button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-      background: linear-gradient(135deg, #00aaff, #005eff);
-    }
-
-    #options button {
-      background: rgba(255,255,255,0.1);
-      margin: 8px 0;
-    }
-
-    #options button:hover {
-      background: rgba(255,255,255,0.2);
-    }
-
-    #quiz-container {
-      display: none;
-    }
-
-    #result {
-      display: none;
-    }
-
-    #progress {
-      margin-bottom: 10px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+.hidden {display:none;}
+</style>
 </head>
 
 <body>
 
-  <!-- MENU -->
-  <div id="menu">
-    <h1>Kuis TKJ</h1>
-    <select id="quizSelect">
-      <option value="tkj">Dasar TKJ</option>
-    </select>
-    <button onclick="startQuiz()">Mulai</button>
-  </div>
+<div class="container" id="menu">
+  <h2>CBT TKJ</h2>
+  <button onclick="startQuiz()">Mulai Ujian</button>
+</div>
 
-  <!-- QUIZ -->
-  <div id="quiz-container">
-    <p id="progress"></p>
-    <h2 id="question"></h2>
-    <div id="options"></div>
-    <button onclick="nextQuestion()">Next</button>
-  </div>
+<div class="container hidden" id="quiz">
+  <div id="timer"></div>
+  <div id="progress"></div>
+  <h3 id="question"></h3>
+  <div id="options"></div>
+</div>
 
-  <!-- RESULT -->
-  <div id="result"></div>
+<div class="container hidden" id="result"></div>
 
-  <script>
-    const quizData = {
-      tkj: [
-  {
-    "question": "Apa kepanjangan dari LAN?",
-    "options": ["Local Area Network", "Large Area Network", "Long Area Network", "Limited Area Network"],
-    "answer": 0
-  },
-  {
-    "question": "Perangkat yang berfungsi menghubungkan beberapa jaringan disebut?",
-    "options": ["Switch", "Router", "Hub", "Repeater"],
-    "answer": 1
-  },
-  {
-    "question": "Alamat unik pada setiap perangkat jaringan disebut?",
-    "options": ["IP Address", "Subnet", "Gateway", "DNS"],
-    "answer": 0
-  },
-  {
-    "question": "Apa fungsi dari DNS?",
-    "options": ["Menyimpan file", "Mengubah domain menjadi IP", "Menghubungkan jaringan", "Mengamankan jaringan"],
-    "answer": 1
-  },
-  {
-    "question": "Topologi jaringan berbentuk lingkaran disebut?",
-    "options": ["Star", "Bus", "Ring", "Mesh"],
-    "answer": 2
-  },
-  {
-    "question": "Perangkat untuk memperkuat sinyal disebut?",
-    "options": ["Router", "Repeater", "Switch", "Bridge"],
-    "answer": 1
-  },
-  {
-    "question": "Apa fungsi utama switch?",
-    "options": ["Menghubungkan jaringan berbeda", "Mengatur lalu lintas data dalam LAN", "Memperkuat sinyal", "Menyimpan data"],
-    "answer": 1
-  },
-  {
-    "question": "Apa kepanjangan dari WAN?",
-    "options": ["Wide Area Network", "Wireless Area Network", "World Area Network", "Web Area Network"],
-    "answer": 0
-  },
-  {
-    "question": "Media transmisi menggunakan cahaya adalah?",
-    "options": ["UTP", "Koaksial", "Fiber Optic", "STP"],
-    "answer": 2
-  },
-  {
-    "question": "Perintah untuk mengecek koneksi jaringan adalah?",
-    "options": ["ping", "dir", "copy", "del"],
-    "answer": 0
-  },
-  {
-    "question": "Apa itu IP Address?",
-    "options": ["Alamat email", "Alamat unik perangkat", "Nama komputer", "Jenis jaringan"],
-    "answer": 1
-  },
-  {
-    "question": "Topologi paling umum digunakan di LAN adalah?",
-    "options": ["Bus", "Ring", "Star", "Mesh"],
-    "answer": 2
-  },
-  {
-    "question": "Perangkat pusat pada topologi star adalah?",
-    "options": ["Router", "Switch", "Repeater", "Modem"],
-    "answer": 1
-  },
-  {
-    "question": "Apa fungsi modem?",
-    "options": ["Menghubungkan ke internet", "Menyimpan data", "Menguatkan sinyal", "Mengatur IP"],
-    "answer": 0
-  },
-  {
-    "question": "Jenis kabel LAN yang paling umum adalah?",
-    "options": ["Koaksial", "UTP", "Fiber", "STP"],
-    "answer": 1
-  },
-  {
-    "question": "Kepanjangan dari HTTP adalah?",
-    "options": ["HyperText Transfer Protocol", "High Transfer Protocol", "Hyper Tool Protocol", "Host Transfer Protocol"],
-    "answer": 0
-  },
-  {
-    "question": "Apa fungsi firewall?",
-    "options": ["Mempercepat internet", "Mengamankan jaringan", "Menyimpan data", "Menghubungkan perangkat"],
-    "answer": 1
-  },
-  {
-    "question": "Perangkat untuk menghubungkan komputer ke jaringan adalah?",
-    "options": ["CPU", "NIC", "RAM", "HDD"],
-    "answer": 1
-  },
-  {
-    "question": "Apa itu MAC Address?",
-    "options": ["Alamat email", "Alamat fisik perangkat", "Alamat IP", "Nama jaringan"],
-    "answer": 1
-  },
-  {
-    "question": "Berapa jumlah bit pada IPv4?",
-    "options": ["16", "32", "64", "128"],
-    "answer": 1
-  },
+<script>
+// ================= DATA =================
+const questionsRaw = [
 
-  {
-    "question": "Apa fungsi DHCP?",
-    "options": ["Memberi IP otomatis", "Mengamankan jaringan", "Menyimpan data", "Menghubungkan jaringan"],
-    "answer": 0
-  },
-  {
-    "question": "Perintah untuk melihat konfigurasi IP di Windows?",
-    "options": ["ipconfig", "ping", "dir", "netstat"],
-    "answer": 0
-  },
-  {
-    "question": "Apa itu subnet mask?",
-    "options": ["Pembagi jaringan", "Alamat IP", "Nama domain", "Firewall"],
-    "answer": 0
-  },
-  {
-    "question": "Topologi dengan banyak jalur disebut?",
-    "options": ["Star", "Mesh", "Bus", "Ring"],
-    "answer": 1
-  },
-  {
-    "question": "Apa fungsi bridge?",
-    "options": ["Menghubungkan dua jaringan", "Menyimpan data", "Mengatur IP", "Menguatkan sinyal"],
-    "answer": 0
-  },
-  {
-    "question": "Apa itu bandwidth?",
-    "options": ["Kecepatan transfer data", "Ukuran kabel", "Alamat IP", "Jenis jaringan"],
-    "answer": 0
-  },
-  {
-    "question": "Apa kepanjangan dari FTP?",
-    "options": ["File Transfer Protocol", "Fast Transfer Protocol", "File Tool Protocol", "Free Transfer Protocol"],
-    "answer": 0
-  },
-  {
-    "question": "Port default HTTP adalah?",
-    "options": ["21", "22", "80", "443"],
-    "answer": 2
-  },
-  {
-    "question": "Port default HTTPS adalah?",
-    "options": ["80", "21", "443", "25"],
-    "answer": 2
-  },
-  {
-    "question": "Apa itu router?",
-    "options": ["Penghubung jaringan", "Penyimpan data", "Penguat sinyal", "Antivirus"],
-    "answer": 0
-  },
+{question:"Apa kepanjangan dari LAN?",options:["Local Area Network","Large Area Network","Long Area Network","Limited Area Network"],answer:0},
+{question:"Apa kepanjangan dari WAN?",options:["Wide Area Network","Wireless Area Network","World Area Network","Web Area Network"],answer:0},
+{question:"Perangkat penghubung jaringan?",options:["Router","CPU","RAM","Monitor"],answer:0},
+{question:"Perangkat dalam LAN?",options:["Switch","Keyboard","Printer","Scanner"],answer:0},
+{question:"Alamat unik perangkat?",options:["IP Address","DNS","Gateway","Subnet"],answer:0},
 
-  {
-    "question": "Apa itu switch unmanaged?",
-    "options": ["Switch tanpa konfigurasi", "Switch mahal", "Switch besar", "Switch wireless"],
-    "answer": 0
-  },
-  {
-    "question": "Apa fungsi access point?",
-    "options": ["Menghubungkan wifi", "Menyimpan data", "Mengatur IP", "Firewall"],
-    "answer": 0
-  },
-  {
-    "question": "Apa itu SSID?",
-    "options": ["Nama wifi", "Password", "IP address", "Router"],
-    "answer": 0
-  },
-  {
-    "question": "Apa itu latency?",
-    "options": ["Waktu tunda jaringan", "Kecepatan tinggi", "Ukuran file", "Jenis kabel"],
-    "answer": 0
-  },
-  {
-    "question": "Apa fungsi proxy?",
-    "options": ["Perantara internet", "Antivirus", "Penyimpan data", "Penguat sinyal"],
-    "answer": 0
-  },
-  {
-    "question": "Apa itu VLAN?",
-    "options": ["Jaringan virtual", "Kabel LAN", "Router", "IP address"],
-    "answer": 0
-  },
-  {
-    "question": "Apa fungsi kabel straight?",
-    "options": ["Perangkat berbeda", "Perangkat sama", "Internet", "Server"],
-    "answer": 0
-  },
-  {
-    "question": "Apa fungsi kabel crossover?",
-    "options": ["Perangkat sama", "Perangkat berbeda", "Server", "Internet"],
-    "answer": 0
-  },
-  {
-    "question": "Apa itu server?",
-    "options": ["Penyedia layanan", "Pengguna", "Router", "Switch"],
-    "answer": 0
-  },
-  {
-    "question": "Apa itu client?",
-    "options": ["Pengguna layanan", "Server", "Router", "Switch"],
-    "answer": 0
-  },
+{question:"Fungsi DNS?",options:["Mengubah domain ke IP","Menyimpan data","Firewall","Router"],answer:0},
+{question:"Topologi bintang?",options:["Ring","Bus","Star","Mesh"],answer:2},
+{question:"Topologi lingkaran?",options:["Star","Bus","Ring","Mesh"],answer:2},
+{question:"Kabel umum?",options:["Fiber","UTP","Koaksial","STP"],answer:1},
+{question:"Media tercepat?",options:["UTP","Koaksial","Fiber Optic","STP"],answer:2},
 
-  {
-    "question": "Apa fungsi OSI Layer?",
-    "options": ["Model jaringan", "Kabel", "Router", "Server"],
-    "answer": 0
-  },
-  {
-    "question": "Layer ke-7 OSI adalah?",
-    "options": ["Application", "Network", "Data Link", "Transport"],
-    "answer": 0
-  },
-  {
-    "question": "Layer ke-3 OSI adalah?",
-    "options": ["Network", "Application", "Session", "Physical"],
-    "answer": 0
-  },
-  {
-    "question": "Apa itu TCP?",
-    "options": ["Protokol jaringan", "Kabel", "Router", "IP"],
-    "answer": 0
-  },
-  {
-    "question": "Apa itu UDP?",
-    "options": ["Protokol jaringan", "Server", "Router", "Switch"],
-    "answer": 0
-  },
-  {
-    "question": "Apa itu ping?",
-    "options": ["Cek koneksi", "Download", "Upload", "Hapus file"],
-    "answer": 0
-  },
-  {
-    "question": "Apa itu traceroute?",
-    "options": ["Melacak jalur jaringan", "Download", "Upload", "Firewall"],
-    "answer": 0
-  },
-  {
-    "question": "Apa itu hosting?",
-    "options": ["Tempat website", "Router", "Switch", "IP"],
-    "answer": 0
-  },
-  {
-    "question": "Apa itu domain?",
-    "options": ["Nama website", "IP", "Server", "Router"],
-    "answer": 0
-  },
-  {
-    "question": "Apa fungsi CDN?",
-    "options": ["Mempercepat akses", "Menyimpan data", "Firewall", "Router"],
-    "answer": 0
-  }
-]
+{question:"Perangkat penguat sinyal?",options:["Router","Repeater","Switch","Bridge"],answer:1},
+{question:"Fungsi switch?",options:["Mengatur lalu lintas LAN","Menyimpan data","Firewall","DNS"],answer:0},
+{question:"Fungsi router?",options:["Menghubungkan jaringan","Menyimpan data","Printer","Scanner"],answer:0},
+{question:"Fungsi modem?",options:["Menghubungkan internet","Keyboard","Monitor","Mouse"],answer:0},
+{question:"Apa itu server?",options:["Penyedia layanan","Pengguna","Router","Switch"],answer:0},
+
+{question:"Apa itu client?",options:["Pengguna layanan","Server","Router","Switch"],answer:0},
+{question:"Perintah cek koneksi?",options:["ping","dir","copy","del"],answer:0},
+{question:"Perintah lihat IP?",options:["ipconfig","ping","dir","netstat"],answer:0},
+{question:"Jumlah bit IPv4?",options:["16","32","64","128"],answer:1},
+{question:"Port HTTP?",options:["21","22","80","443"],answer:2},
+
+{question:"Port HTTPS?",options:["80","21","443","25"],answer:2},
+{question:"Kepanjangan HTTP?",options:["HyperText Transfer Protocol","High Transfer Protocol","Hyper Tool Protocol","Host Transfer Protocol"],answer:0},
+{question:"Kepanjangan FTP?",options:["File Transfer Protocol","Fast Transfer Protocol","File Tool Protocol","Free Transfer Protocol"],answer:0},
+{question:"Fungsi firewall?",options:["Mengamankan jaringan","Mempercepat","Menyimpan","Router"],answer:0},
+{question:"NIC adalah?",options:["Kartu jaringan","CPU","RAM","HDD"],answer:0},
+
+{question:"MAC Address?",options:["Alamat fisik","IP Address","Domain","Gateway"],answer:0},
+{question:"DHCP?",options:["Memberi IP otomatis","Firewall","Router","Switch"],answer:0},
+{question:"Subnet mask?",options:["Pembagi jaringan","IP","DNS","Gateway"],answer:0},
+{question:"Bandwidth?",options:["Kecepatan data","Ukuran kabel","IP","Server"],answer:0},
+{question:"Latency?",options:["Waktu tunda","Kecepatan","Ukuran","Router"],answer:0},
+
+{question:"Access point?",options:["Wifi","CPU","RAM","Printer"],answer:0},
+{question:"SSID?",options:["Nama wifi","Password","IP","Router"],answer:0},
+{question:"Proxy?",options:["Perantara internet","Firewall","Router","Switch"],answer:0},
+{question:"VLAN?",options:["Jaringan virtual","Router","IP","Server"],answer:0},
+{question:"Bridge?",options:["Penghubung jaringan","CPU","RAM","HDD"],answer:0},
+
+{question:"Topologi paling umum?",options:["Bus","Ring","Star","Mesh"],answer:2},
+{question:"Kabel straight?",options:["Perangkat beda","Perangkat sama","Server","Internet"],answer:0},
+{question:"Kabel crossover?",options:["Perangkat sama","Perangkat beda","Server","Internet"],answer:0},
+{question:"OSI layer ke-7?",options:["Application","Network","Transport","Data Link"],answer:0},
+{question:"OSI layer ke-3?",options:["Network","Application","Session","Physical"],answer:0},
+
+{question:"TCP?",options:["Protokol jaringan","Router","Switch","Server"],answer:0},
+{question:"UDP?",options:["Protokol jaringan","CPU","RAM","Monitor"],answer:0},
+{question:"Traceroute?",options:["Melacak jaringan","Download","Upload","Firewall"],answer:0},
+{question:"Hosting?",options:["Tempat website","Router","Switch","IP"],answer:0},
+{question:"Domain?",options:["Nama website","IP","Server","Router"],answer:0},
+
+{question:"CDN?",options:["Mempercepat akses","Menyimpan","Firewall","Router"],answer:0},
+{question:"Switch unmanaged?",options:["Tanpa konfigurasi","Mahal","Besar","Wireless"],answer:0},
+{question:"Topologi mesh?",options:["Banyak jalur","Satu jalur","Lingkaran","Bintang"],answer:0},
+{question:"Repeater?",options:["Penguat sinyal","Router","Switch","Server"],answer:0},
+{question:"Gateway?",options:["Penghubung jaringan","CPU","RAM","Printer"],answer:0}
+
+];
+
+// ================= VAR =================
+let questions = [];
+let current = 0;
+let score = 0;
+let timer;
+let timeLeft = 10;
+
+// ================= START =================
+function startQuiz(){
+  enterFullscreen();
+  questions = shuffleArray([...questionsRaw]).map(q => shuffleQuestion(q));
+
+  document.getElementById("menu").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+
+  showQuestion();
+}
+
+// ================= SHOW =================
+function showQuestion(){
+  clearInterval(timer);
+  timeLeft = 10;
+
+  const q = questions[current];
+  document.getElementById("question").innerText = q.question;
+  document.getElementById("progress").innerText =
+    `Soal ${current+1}/${questions.length}`;
+
+  const optionsDiv = document.getElementById("options");
+  optionsDiv.innerHTML = "";
+
+  q.options.forEach((opt,i)=>{
+    const btn = document.createElement("button");
+    btn.innerText = String.fromCharCode(65+i)+". "+opt;
+
+    btn.onclick = ()=>{
+      if(i===q.answer){ score++; btn.style.background="#00ff88";}
+      else { btn.style.background="#ff4d4d"; }
+      nextQuestion();
     };
 
-    let questions = [];
-    let currentIndex = 0;
-    let score = 0;
+    optionsDiv.appendChild(btn);
+  });
 
-    function startQuiz() {
-      const selected = document.getElementById("quizSelect").value;
-      questions = quizData[selected];
+  startTimer();
+}
 
-      document.getElementById("menu").style.display = "none";
-      document.getElementById("quiz-container").style.display = "block";
-
-      currentIndex = 0;
-      score = 0;
-
-      showQuestion();
+// ================= TIMER =================
+function startTimer(){
+  updateTimer();
+  timer = setInterval(()=>{
+    timeLeft--;
+    updateTimer();
+    if(timeLeft<=0){
+      nextQuestion();
     }
+  },1000);
+}
 
-    function showQuestion() {
-      const q = questions[currentIndex];
+function updateTimer(){
+  document.getElementById("timer").innerText =
+    "Waktu: "+timeLeft+" detik";
+}
 
-      document.getElementById("question").innerText = q.question;
-      document.getElementById("progress").innerText =
-        `Soal ${currentIndex + 1} / ${questions.length}`;
+// ================= NEXT =================
+function nextQuestion(){
+  clearInterval(timer);
+  current++;
+  if(current<questions.length){
+    showQuestion();
+  } else {
+    finishQuiz();
+  }
+}
 
-      const optionsDiv = document.getElementById("options");
-      optionsDiv.innerHTML = "";
+// ================= RESULT =================
+function finishQuiz(){
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("result").classList.remove("hidden");
 
-      q.options.forEach((opt, i) => {
-        const btn = document.createElement("button");
-        btn.innerText = String.fromCharCode(65 + i) + ". " + opt;
+  saveScore(score);
 
-        btn.onclick = () => {
-          if (i === q.answer) {
-            btn.style.background = "#00ff88";
-            score++;
-          } else {
-            btn.style.background = "#ff4d4d";
-          }
+  document.getElementById("result").innerHTML = `
+    <h2>Skor: ${score}/${questions.length}</h2>
+    <h3>High Score: ${getHighScore()}</h3>
+    <button onclick="location.reload()">Ulangi</button>
+  `;
+}
 
-          disableOptions();
-        };
+// ================= STORAGE =================
+function saveScore(score){
+  let high = localStorage.getItem("highscore") || 0;
+  if(score > high){
+    localStorage.setItem("highscore", score);
+  }
+}
 
-        optionsDiv.appendChild(btn);
-      });
-    }
+function getHighScore(){
+  return localStorage.getItem("highscore") || 0;
+}
 
-    function disableOptions() {
-      const buttons = document.querySelectorAll("#options button");
-      buttons.forEach(btn => btn.disabled = true);
-    }
+// ================= SHUFFLE =================
+function shuffleArray(arr){
+  return arr.sort(()=>Math.random()-0.5);
+}
 
-    function nextQuestion() {
-      currentIndex++;
-      if (currentIndex < questions.length) {
-        showQuestion();
-      } else {
-        showResult();
-      }
-    }
+function shuffleQuestion(q){
+  const newOptions = [...q.options];
+  const correct = q.options[q.answer];
 
-    function showResult() {
-      document.getElementById("quiz-container").style.display = "none";
+  shuffleArray(newOptions);
 
-      const resultDiv = document.getElementById("result");
-      resultDiv.style.display = "block";
-      resultDiv.innerHTML = `
-        <h2>Skor: ${score} / ${questions.length}</h2>
-        <button onclick="location.reload()">Ulangi</button>
-      `;
-    }
-  </script>
+  return {
+    question:q.question,
+    options:newOptions,
+    answer:newOptions.indexOf(correct)
+  };
+}
+
+// ================= FULLSCREEN =================
+function enterFullscreen(){
+  document.documentElement.requestFullscreen();
+}
+
+// ================= ANTI CHEAT =================
+document.addEventListener("contextmenu", e=>e.preventDefault());
+
+document.addEventListener("visibilitychange", ()=>{
+  if(document.hidden){
+    alert("Jangan keluar dari ujian!");
+  }
+});
+
+document.onkeydown = function(e){
+  if(e.key === "F12" || e.ctrlKey && e.shiftKey && e.key === "I"){
+    return false;
+  }
+};
+</script>
 
 </body>
 </html>
