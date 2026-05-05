@@ -6,6 +6,6 @@ https://del0611.github.io/Mandiri/
 
 https://del0611.github.io/Mandiri/Latihan%20Soal.html
 
-# Ujain
+# Ujian
 
 https://del0611.github.io/Mandiri/Kuis.html
