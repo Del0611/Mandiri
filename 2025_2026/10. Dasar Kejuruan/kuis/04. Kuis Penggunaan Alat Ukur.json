@@ -457,6 +457,56 @@
         "Software jaringan"
       ],
       "answer": 0
+    },
+    {
+      "question": "LAN tester digunakan untuk?",
+      "options": [
+        "Mengecek urutan kabel jaringan",
+        "Mengukur kecepatan internet",
+        "Membuat jaringan baru",
+        "Menghapus virus"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Multimeter dapat digunakan untuk mengukur?",
+      "options": [
+        "Tegangan listrik",
+        "Kecepatan jaringan",
+        "Kekuatan sinyal WiFi",
+        "Jumlah komputer"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Optical power meter digunakan untuk?",
+      "options": [
+        "Mengukur kekuatan sinyal fiber optic",
+        "Menguji kabel UTP",
+        "Mengukur suhu komputer",
+        "Menghapus data jaringan"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Cara penggunaan alat ukur yang benar adalah?",
+      "options": [
+        "Mengikuti petunjuk dan prosedur keselamatan",
+        "Menggunakan sembarangan",
+        "Menyalakan tanpa pengecekan",
+        "Membongkar alat terlebih dahulu"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Pemeliharaan alat ukur bertujuan untuk?",
+      "options": [
+        "Menjaga alat tetap akurat dan awet",
+        "Mempercepat kerusakan alat",
+        "Menghapus fungsi alat",
+        "Mengurangi penggunaan listrik"
+      ],
+      "answer": 0
     }
   ]
 }
