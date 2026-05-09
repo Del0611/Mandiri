@@ -1,14 +1,411 @@
 {
   "questions": [
     {
-      "question": "Apa kepanjangan LAN?",
+      "question": "Apa kepanjangan K3LH?",
       "options": [
-        "Local Area Network",
-        "Large Area Network",
-        "Long Area Network",
-        "Limited Area Network"
+        "Keselamatan dan Kesehatan Kerja serta Lingkungan Hidup",
+        "Keamanan Kerja dan Kesehatan Lingkungan Harian",
+        "Keselamatan Kerja dan Kebersihan Lingkungan Harian",
+        "Kesehatan Kerja dan Keselamatan Lingkungan Hidup"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Tujuan utama K3LH adalah?",
+      "options": [
+        "Meningkatkan keuntungan",
+        "Menjaga keselamatan pekerja",
+        "Mempercepat produksi",
+        "Mengurangi tenaga kerja"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "APD adalah singkatan dari?",
+      "options": [
+        "Alat Pelindung Diri",
+        "Alat Pengaman Data",
+        "Alat Perawatan Diri",
+        "Alat Pengukur Diri"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Contoh APD adalah?",
+      "options": [
+        "Helm, sarung tangan",
+        "Laptop",
+        "Kursi",
+        "Meja"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Helm proyek berfungsi untuk?",
+      "options": [
+        "Melindungi kepala",
+        "Memperindah",
+        "Mempercepat kerja",
+        "Mengurangi panas"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "P3K adalah singkatan dari?",
+      "options": [
+        "Pertolongan Pertama Pada Kecelakaan",
+        "Pengamanan Pekerja Kesehatan",
+        "Pertolongan Penyakit Kronis",
+        "Penanganan Kerja Khusus"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Langkah pertama saat kecelakaan adalah?",
+      "options": [
+        "Menilai situasi aman",
+        "Menjauh",
+        "Meninggalkan korban",
+        "Berlari"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Budaya kerja yang baik adalah?",
+      "options": [
+        "Disiplin",
+        "Malas",
+        "Menunda pekerjaan",
+        "Tidak bertanggung jawab"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Masker digunakan untuk?",
+      "options": [
+        "Melindungi pernapasan",
+        "Melindungi kaki",
+        "Melindungi tangan",
+        "Melindungi mata"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Sarung tangan berfungsi untuk?",
+      "options": [
+        "Melindungi tangan",
+        "Melindungi kepala",
+        "Melindungi mata",
+        "Melindungi kaki"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Sepatu safety digunakan untuk?",
+      "options": [
+        "Melindungi kaki",
+        "Mempercepat lari",
+        "Memperindah",
+        "Menambah tinggi"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "K3 penting karena?",
+      "options": [
+        "Mengurangi kecelakaan",
+        "Menambah biaya",
+        "Menghambat kerja",
+        "Tidak penting"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kecelakaan kerja disebabkan?",
+      "options": [
+        "Kelalaian",
+        "APD lengkap",
+        "Lingkungan aman",
+        "Prosedur benar"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Simbol merah pada K3 berarti?",
+      "options": [
+        "Bahaya",
+        "Aman",
+        "Informasi",
+        "Netral"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "APD harus dalam kondisi?",
+      "options": [
+        "Baik",
+        "Rusak",
+        "Kotor",
+        "Tidak lengkap"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Contoh bahaya listrik adalah?",
+      "options": [
+        "Kabel terbuka",
+        "Buku",
+        "Meja",
+        "Kursi"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kebakaran termasuk bahaya?",
+      "options": [
+        "Fisik",
+        "Sosial",
+        "Mental",
+        "Administrasi"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Budaya kerja 5S berasal dari?",
+      "options": [
+        "Jepang",
+        "Indonesia",
+        "Korea",
+        "China"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "5S pertama adalah Seiri artinya?",
+      "options": [
+        "Ringkas",
+        "Rapi",
+        "Bersih",
+        "Rajin"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "P3K dilakukan saat?",
+      "options": [
+        "Kecelakaan",
+        "Tidur",
+        "Makan",
+        "Belajar"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Tujuan P3K adalah?",
+      "options": [
+        "Menyelamatkan korban",
+        "Mengobati total",
+        "Menggantikan dokter",
+        "Menghentikan kerja"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Jika korban pingsan posisi terbaik?",
+      "options": [
+        "Terlentang",
+        "Berdiri",
+        "Duduk",
+        "Lari"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Luka berdarah harus?",
+      "options": [
+        "Ditekan kain bersih",
+        "Dibiarkan",
+        "Digaruk",
+        "Ditiup"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "APD mata disebut?",
+      "options": [
+        "Goggles",
+        "Helmet",
+        "Masker",
+        "Sarung tangan"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Etika kerja berarti?",
+      "options": [
+        "Sikap kerja",
+        "Tidur",
+        "Main game",
+        "Santai"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Disiplin berarti?",
+      "options": [
+        "Tepat waktu",
+        "Terlambat",
+        "Tidak hadir",
+        "Santai"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kebersihan kerja termasuk?",
+      "options": [
+        "Budaya kerja",
+        "Hobi",
+        "Gangguan",
+        "Tidak penting"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "APD wajib digunakan saat?",
+      "options": [
+        "Area berbahaya",
+        "Rumah",
+        "Liburan",
+        "Tidur"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Helm digunakan untuk?",
+      "options": [
+        "Kepala",
+        "Kaki",
+        "Tangan",
+        "Mata"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Masker melindungi?",
+      "options": [
+        "Pernapasan",
+        "Kaki",
+        "Tangan",
+        "Kepala"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Sarung tangan untuk?",
+      "options": [
+        "Tangan",
+        "Kepala",
+        "Kaki",
+        "Mata"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "K3LH bertujuan?",
+      "options": [
+        "Keselamatan kerja",
+        "Kerugian",
+        "Kecelakaan",
+        "Keterlambatan"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Budaya kerja buruk adalah?",
+      "options": [
+        "Malas",
+        "Disiplin",
+        "Rajin",
+        "Tanggung jawab"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "APD lengkap berarti?",
+      "options": [
+        "Semua alat dipakai",
+        "Sebagian",
+        "Tidak dipakai",
+        "Rusak"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kecelakaan bisa dicegah dengan?",
+      "options": [
+        "APD",
+        "Kelalaian",
+        "Malas",
+        "Abaikan aturan"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "P3K digunakan untuk?",
+      "options": [
+        "Pertolongan awal",
+        "Operasi",
+        "Rawat inap",
+        "Diagnosa"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Budaya kerja baik meningkatkan?",
+      "options": [
+        "Produktivitas",
+        "Kecelakaan",
+        "Kerugian",
+        "Kesalahan"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "APD harus?",
+      "options": [
+        "Standar",
+        "Rusak",
+        "Kotor",
+        "Tidak lengkap"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Contoh budaya kerja adalah?",
+      "options": [
+        "Kerja sama",
+        "Malas",
+        "Menunda",
+        "Bolos"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "K3LH penting untuk?",
+      "options": [
+        "Keselamatan",
+        "Kerugian",
+        "Kecelakaan",
+        "Masalah"
       ],
       "answer": 0
     }
+
   ]
 }
