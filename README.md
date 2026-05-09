@@ -2,10 +2,9 @@
 
 https://del0611.github.io/Mandiri/
 
-# Latihan
+# Kuis
 
-https://del0611.github.io/Mandiri/Latihan%20Soal.html
+https://del0611.github.io/Mandiri/Kuis.html
 
 # Ujian
 
-https://del0611.github.io/Mandiri/Kuis.html
