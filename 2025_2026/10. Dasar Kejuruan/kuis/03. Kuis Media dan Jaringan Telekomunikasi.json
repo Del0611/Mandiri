@@ -1,0 +1,400 @@
+{
+  "questions": [
+    {
+      "question": "Apa yang dimaksud dengan media transmisi data?",
+      "options": [
+        "Perantara untuk mengirimkan data dari satu perangkat ke perangkat lain",
+        "Alat untuk mencetak dokumen",
+        "Software pengolah kata",
+        "Perangkat input komputer"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Media transmisi dibagi menjadi berapa jenis utama?",
+      "options": [
+        "2 jenis",
+        "1 jenis",
+        "3 jenis",
+        "5 jenis"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Contoh media transmisi kabel adalah?",
+      "options": [
+        "UTP",
+        "WiFi",
+        "Bluetooth",
+        "Gelombang radio"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "UTP adalah jenis kabel?",
+      "options": [
+        "Unshielded Twisted Pair",
+        "Universal Transfer Protocol",
+        "Unit Transmission Power",
+        "Ultra Telecommunication Pair"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "STP memiliki kelebihan dibanding UTP yaitu?",
+      "options": [
+        "Lebih tahan gangguan (noise)",
+        "Lebih murah",
+        "Lebih lambat",
+        "Tidak bisa digunakan"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Fiber optic menggunakan media?",
+      "options": [
+        "Cahaya",
+        "Listrik",
+        "Gelombang suara",
+        "Magnet"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kelebihan fiber optic adalah?",
+      "options": [
+        "Kecepatan sangat tinggi",
+        "Murah",
+        "Mudah rusak",
+        "Jangkauan pendek"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kekurangan fiber optic adalah?",
+      "options": [
+        "Biaya mahal",
+        "Sangat lambat",
+        "Tidak stabil",
+        "Tidak bisa digunakan"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Media nirkabel adalah?",
+      "options": [
+        "Tanpa kabel",
+        "Menggunakan kabel",
+        "Menggunakan tinta",
+        "Menggunakan kertas"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Contoh media nirkabel adalah?",
+      "options": [
+        "WiFi",
+        "UTP",
+        "STP",
+        "Fiber optic"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Bluetooth digunakan untuk?",
+      "options": [
+        "Komunikasi jarak dekat",
+        "Jarak sangat jauh",
+        "Mencetak dokumen",
+        "Menghapus data"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Gelombang radio digunakan pada?",
+      "options": [
+        "Komunikasi nirkabel",
+        "Kabel jaringan",
+        "Harddisk",
+        "CPU"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kelebihan jaringan kabel adalah?",
+      "options": [
+        "Lebih stabil",
+        "Lebih lambat",
+        "Tidak aman",
+        "Susah digunakan"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kekurangan jaringan kabel adalah?",
+      "options": [
+        "Kurang fleksibel",
+        "Sangat cepat",
+        "Murah",
+        "Tidak perlu instalasi"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kelebihan wireless adalah?",
+      "options": [
+        "Fleksibel",
+        "Butuh kabel panjang",
+        "Susah dipasang",
+        "Tidak bisa digunakan"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Kekurangan wireless adalah?",
+      "options": [
+        "Rentan interferensi",
+        "Sangat stabil",
+        "Tidak perlu sinyal",
+        "Tidak bisa dipakai"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Fiber optic mengirim data menggunakan?",
+      "options": [
+        "Cahaya laser",
+        "Listrik tinggi",
+        "Suara",
+        "Magnet"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Transmisi data adalah?",
+      "options": [
+        "Proses pengiriman data",
+        "Penghapusan data",
+        "Penyimpanan data",
+        "Pengeditan gambar"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Data dikirim melalui?",
+      "options": [
+        "Sinyal",
+        "CPU",
+        "RAM",
+        "Harddisk"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Topologi jaringan adalah?",
+      "options": [
+        "Pola hubungan antar perangkat",
+        "Jenis software",
+        "Jenis virus",
+        "Sistem operasi"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Topologi star memiliki pusat berupa?",
+      "options": [
+        "Switch atau hub",
+        "Komputer client",
+        "Printer",
+        "Scanner"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kelebihan topologi star adalah?",
+      "options": [
+        "Mudah dikelola",
+        "Sulit diperbaiki",
+        "Tidak stabil",
+        "Lambat"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kekurangan topologi star adalah?",
+      "options": [
+        "Jika pusat rusak jaringan mati",
+        "Tidak butuh kabel",
+        "Sangat cepat",
+        "Tidak butuh perangkat"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Topologi bus menggunakan?",
+      "options": [
+        "Satu kabel utama",
+        "Banyak pusat",
+        "Bentuk lingkaran",
+        "Bentuk mesh"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kelemahan topologi bus adalah?",
+      "options": [
+        "Rawan collision",
+        "Sangat stabil",
+        "Tidak butuh kabel",
+        "Tidak bisa error"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Topologi ring berbentuk?",
+      "options": [
+        "Lingkaran",
+        "Bintang",
+        "Bus",
+        "Mesh"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kelemahan topologi ring adalah?",
+      "options": [
+        "Putus satu titik mengganggu jaringan",
+        "Sangat cepat",
+        "Tidak butuh kabel",
+        "Sangat murah"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Topologi mesh memiliki ciri?",
+      "options": [
+        "Semua perangkat saling terhubung",
+        "Satu pusat",
+        "Satu kabel",
+        "Tanpa koneksi"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kelebihan topologi mesh adalah?",
+      "options": [
+        "Sangat andal",
+        "Tidak stabil",
+        "Mudah rusak",
+        "Lambat"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kekurangan topologi mesh adalah?",
+      "options": [
+        "Biaya mahal",
+        "Murah",
+        "Sederhana",
+        "Tidak butuh kabel"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Perbedaan kabel dan wireless adalah?",
+      "options": [
+        "Kabel lebih stabil",
+        "Wireless lebih stabil",
+        "Kabel tidak butuh media",
+        "Wireless tidak butuh sinyal"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Wireless menggunakan?",
+      "options": [
+        "Gelombang elektromagnetik",
+        "Kabel tembaga",
+        "Serat plastik",
+        "Besi"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Gangguan jaringan disebut?",
+      "options": [
+        "Noise",
+        "IP Address",
+        "Router",
+        "Switch"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Interferensi adalah?",
+      "options": [
+        "Gangguan sinyal",
+        "Pengiriman data",
+        "Penyimpanan data",
+        "Software"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Sinyal dalam komunikasi berfungsi untuk?",
+      "options": [
+        "Membawa data",
+        "Menghapus data",
+        "Menyimpan file",
+        "Mengetik"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Sinyal yang lemah menyebabkan?",
+      "options": [
+        "Gangguan koneksi",
+        "Koneksi cepat",
+        "Tidak ada masalah",
+        "Data lebih aman"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Media transmisi terbaik untuk jarak jauh adalah?",
+      "options": [
+        "Fiber optic",
+        "UTP",
+        "STP",
+        "Bluetooth"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Wireless cocok digunakan untuk?",
+      "options": [
+        "Mobilitas tinggi",
+        "Kabel panjang",
+        "Server besar saja",
+        "Offline komputer"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Fungsi topologi jaringan adalah?",
+      "options": [
+        "Mengatur hubungan perangkat",
+        "Menghapus data",
+        "Menambah virus",
+        "Mematikan komputer"
+      ],
+      "answer": 0
+    }
+  ]
+}
