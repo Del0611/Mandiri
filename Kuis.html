@@ -106,12 +106,11 @@ button:hover{
 
 const daftarQuiz = [
 
-  
   {
     nama:"10 Dasar TKJ K3LH",
     file:"01. kuis K3LH.json"
   },
-  
+
   {
     nama:"10 Dasar TKJ Sistem Komputer",
     file:"02. kuis Sistem Komputer.json"
@@ -124,7 +123,7 @@ const daftarQuiz = [
 
 ];
 
-// ================= BUAT TOMBOL QUIZ =================
+// ================= BUAT MENU =================
 
 const quizList =
   document.getElementById("quizList");
@@ -150,11 +149,34 @@ let questions = [];
 let current = 0;
 let score = 0;
 
+// ================= RESET UI =================
+
+function resetUI(){
+  document.getElementById("options").innerHTML = "";
+  document.getElementById("question").innerText = "";
+  document.getElementById("progress").innerText = "";
+}
+
 // ================= LOAD QUIZ =================
 
 async function loadQuiz(file){
 
   try{
+
+    resetUI();
+
+    current = 0;
+    score = 0;
+    questions = [];
+
+    document.getElementById("menu")
+      .classList.add("hidden");
+
+    document.getElementById("result")
+      .classList.add("hidden");
+
+    document.getElementById("quiz")
+      .classList.remove("hidden");
 
     const response =
       await fetch("2025_2026/10. Dasar Kejuruan/kuis/" + file);
@@ -168,28 +190,18 @@ async function loadQuiz(file){
       )
     );
 
-    current = 0;
-    score = 0;
-
-    document.getElementById("menu")
-      .classList.add("hidden");
-
-    document.getElementById("quiz")
-      .classList.remove("hidden");
-
     showQuestion();
 
   }catch(error){
 
     alert("File soal tidak ditemukan!");
-
     console.log(error);
 
   }
 
 }
 
-// ================= TAMPILKAN SOAL =================
+// ================= TAMPIL SOAL =================
 
 function showQuestion(){
 
@@ -200,8 +212,7 @@ function showQuestion(){
     `Soal ${current+1} / ${questions.length}`;
 
   document.getElementById("question")
-    .innerText =
-    q.question;
+    .innerText = q.question;
 
   const optionsDiv =
     document.getElementById("options");
@@ -219,15 +230,10 @@ function showQuestion(){
     btn.onclick = ()=>{
 
       if(i === q.answer){
-
         btn.style.background = "#00cc66";
-
         score++;
-
       }else{
-
         btn.style.background = "#ff4444";
-
       }
 
       disableButtons();
@@ -249,18 +255,14 @@ function nextQuestion(){
   current++;
 
   if(current < questions.length){
-
     showQuestion();
-
   }else{
-
     showResult();
-
   }
 
 }
 
-// ================= DISABLE BUTTON =================
+// ================= DISABLE =================
 
 function disableButtons(){
 
@@ -280,33 +282,15 @@ function showResult(){
     .classList.add("hidden");
 
   const nilai =
-    Math.round(
-      (score / questions.length) * 100
-    );
+    Math.round((score / questions.length) * 100);
 
   let grade = "";
 
-  if(nilai >= 90){
-
-    grade = "A";
-
-  }else if(nilai >= 80){
-
-    grade = "B";
-
-  }else if(nilai >= 70){
-
-    grade = "C";
-
-  }else if(nilai >= 60){
-
-    grade = "D";
-
-  }else{
-
-    grade = "E";
-
-  }
+  if(nilai >= 90) grade = "A";
+  else if(nilai >= 80) grade = "B";
+  else if(nilai >= 70) grade = "C";
+  else if(nilai >= 60) grade = "D";
+  else grade = "E";
 
   const result =
     document.getElementById("result");
@@ -314,20 +298,13 @@ function showResult(){
   result.classList.remove("hidden");
 
   result.innerHTML = `
-
     <h2>Quiz Selesai</h2>
 
     <br>
 
     <h1>Nilai ${nilai}</h1>
 
-    <br>
-
-    <p>
-      Benar ${score}
-      dari
-      ${questions.length} soal
-    </p>
+    <p>Benar ${score} dari ${questions.length} soal</p>
 
     <br>
 
@@ -338,7 +315,6 @@ function showResult(){
     <button onclick="location.reload()">
       Kembali ke Menu
     </button>
-
   `;
 
 }
@@ -346,32 +322,20 @@ function showResult(){
 // ================= SHUFFLE =================
 
 function shuffleArray(arr){
-
-  return arr.sort(()=>
-    Math.random()-0.5
-  );
-
+  return arr.sort(()=>Math.random()-0.5);
 }
-
-// ================= ACAK JAWABAN =================
 
 function shuffleQuestion(q){
 
   const options = [...q.options];
-
-  const correct =
-    q.options[q.answer];
+  const correct = q.options[q.answer];
 
   shuffleArray(options);
 
   return{
-
     question:q.question,
-
     options:options,
-
     answer:options.indexOf(correct)
-
   };
 
 }
