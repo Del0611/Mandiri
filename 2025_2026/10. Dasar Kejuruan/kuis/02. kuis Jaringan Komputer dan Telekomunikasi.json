@@ -456,6 +456,57 @@
         "Software jaringan"
       ],
       "answer": 0
+    },
+
+    {
+      "question": "Apa fungsi utama DNS?",
+      "options": [
+        "Menerjemahkan nama domain ke IP address",
+        "Menghapus file",
+        "Menghubungkan kabel",
+        "Mengatur CPU"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Apa fungsi firewall?",
+      "options": [
+        "Melindungi jaringan dari akses tidak sah",
+        "Mempercepat internet",
+        "Menambah kapasitas RAM",
+        "Menghapus virus secara otomatis"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Apa itu packet loss?",
+      "options": [
+        "Hilangnya paket data saat transmisi",
+        "Penambahan data",
+        "Pengaturan jaringan",
+        "Jenis kabel jaringan"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Apa fungsi ping dalam jaringan?",
+      "options": [
+        "Mengecek konektivitas antar perangkat",
+        "Menghapus data",
+        "Mengatur IP address",
+        "Mempercepat CPU"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Apa itu subnetting?",
+      "options": [
+        "Proses membagi jaringan menjadi beberapa sub jaringan",
+        "Menghapus jaringan",
+        "Menghubungkan internet",
+        "Menambah virus"
+      ],
+      "answer": 0
     }
   ]
 }
