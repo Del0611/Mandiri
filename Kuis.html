@@ -102,6 +102,11 @@ button:hover{
 
 <script>
 
+// ================= ANTI CACHE TOTAL =================
+window.onbeforeunload = function () {
+  return "";
+};
+
 // ================= DAFTAR QUIZ =================
 
 const daftarQuiz = [
@@ -123,15 +128,13 @@ const daftarQuiz = [
 
 ];
 
-// ================= BUAT MENU =================
+// ================= MENU QUIZ =================
 
-const quizList =
-  document.getElementById("quizList");
+const quizList = document.getElementById("quizList");
 
 daftarQuiz.forEach(quiz=>{
 
-  const btn =
-    document.createElement("button");
+  const btn = document.createElement("button");
 
   btn.innerText = quiz.nama;
 
@@ -143,7 +146,7 @@ daftarQuiz.forEach(quiz=>{
 
 });
 
-// ================= VAR =================
+// ================= VAR GLOBAL =================
 
 let questions = [];
 let current = 0;
@@ -157,37 +160,32 @@ function resetUI(){
   document.getElementById("progress").innerText = "";
 }
 
-// ================= LOAD QUIZ =================
+// ================= LOAD QUIZ (FIX UTAMA) =================
 
 async function loadQuiz(file){
 
   try{
 
-    resetUI();
-
+    // reset total
     current = 0;
     score = 0;
     questions = [];
 
-    document.getElementById("menu")
-      .classList.add("hidden");
+    document.getElementById("menu").classList.add("hidden");
+    document.getElementById("result").classList.add("hidden");
+    document.getElementById("quiz").classList.remove("hidden");
 
-    document.getElementById("result")
-      .classList.add("hidden");
+    resetUI();
 
-    document.getElementById("quiz")
-      .classList.remove("hidden");
+    // 🔥 ANTI CACHE (INI PENTING)
+    const response = await fetch(
+      "2025_2026/10. Dasar Kejuruan/kuis/" + file + "?v=" + Date.now()
+    );
 
-    const response =
-      await fetch("2025_2026/10. Dasar Kejuruan/kuis/" + file);
-
-    const data =
-      await response.json();
+    const data = await response.json();
 
     questions = shuffleArray(
-      data.questions.map(q =>
-        shuffleQuestion(q)
-      )
+      data.questions.map(q => shuffleQuestion(q))
     );
 
     showQuestion();
@@ -207,25 +205,19 @@ function showQuestion(){
 
   const q = questions[current];
 
-  document.getElementById("progress")
-    .innerText =
+  document.getElementById("progress").innerText =
     `Soal ${current+1} / ${questions.length}`;
 
-  document.getElementById("question")
-    .innerText = q.question;
+  document.getElementById("question").innerText = q.question;
 
-  const optionsDiv =
-    document.getElementById("options");
-
+  const optionsDiv = document.getElementById("options");
   optionsDiv.innerHTML = "";
 
   q.options.forEach((opt,i)=>{
 
-    const btn =
-      document.createElement("button");
+    const btn = document.createElement("button");
 
-    btn.innerText =
-      String.fromCharCode(65+i)+". "+opt;
+    btn.innerText = String.fromCharCode(65+i)+". "+opt;
 
     btn.onclick = ()=>{
 
@@ -237,7 +229,6 @@ function showQuestion(){
       }
 
       disableButtons();
-
       setTimeout(nextQuestion,500);
 
     };
@@ -262,12 +253,11 @@ function nextQuestion(){
 
 }
 
-// ================= DISABLE =================
+// ================= DISABLE BUTTON =================
 
 function disableButtons(){
 
-  document
-    .querySelectorAll("#options button")
+  document.querySelectorAll("#options button")
     .forEach(btn=>{
       btn.disabled = true;
     });
@@ -278,11 +268,9 @@ function disableButtons(){
 
 function showResult(){
 
-  document.getElementById("quiz")
-    .classList.add("hidden");
+  document.getElementById("quiz").classList.add("hidden");
 
-  const nilai =
-    Math.round((score / questions.length) * 100);
+  const nilai = Math.round((score / questions.length) * 100);
 
   let grade = "";
 
@@ -292,8 +280,7 @@ function showResult(){
   else if(nilai >= 60) grade = "D";
   else grade = "E";
 
-  const result =
-    document.getElementById("result");
+  const result = document.getElementById("result");
 
   result.classList.remove("hidden");
 
@@ -333,9 +320,9 @@ function shuffleQuestion(q){
   shuffleArray(options);
 
   return{
-    question:q.question,
-    options:options,
-    answer:options.indexOf(correct)
+    question: q.question,
+    options: options,
+    answer: options.indexOf(correct)
   };
 
 }
