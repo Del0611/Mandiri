@@ -1,0 +1,27 @@
+{
+  "questions": [
+
+    {
+      "question": "Apa kepanjangan LAN?",
+      "options": [
+        "Local Area Network",
+        "Large Area Network",
+        "Long Area Network",
+        "Limited Area Network"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Perangkat penghubung jaringan?",
+      "options": [
+        "Router",
+        "CPU",
+        "RAM",
+        "Monitor"
+      ],
+      "answer": 0
+    }
+
+  ]
+}
