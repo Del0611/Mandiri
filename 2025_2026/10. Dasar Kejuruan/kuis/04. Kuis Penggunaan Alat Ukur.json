@@ -1,0 +1,461 @@
+{
+  "questions": [
+    {
+      "question": "Apa yang dimaksud dengan jaringan komputer?",
+      "options": [
+        "Kumpulan komputer yang saling terhubung untuk berbagi data",
+        "Komputer yang berdiri sendiri",
+        "Perangkat untuk mencetak",
+        "Software pengolah kata"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Tujuan utama jaringan komputer adalah?",
+      "options": [
+        "Berbagi data dan sumber daya",
+        "Mempercepat kerusakan komputer",
+        "Menghapus file",
+        "Mengurangi pengguna"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "LAN adalah singkatan dari?",
+      "options": [
+        "Local Area Network",
+        "Large Area Network",
+        "Long Access Network",
+        "Local Access Node"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Contoh penggunaan LAN adalah?",
+      "options": [
+        "Jaringan di sekolah",
+        "Internet seluruh dunia",
+        "Koneksi antar negara",
+        "Satelit"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "MAN adalah singkatan dari?",
+      "options": [
+        "Metropolitan Area Network",
+        "Main Area Network",
+        "Multi Access Network",
+        "Machine Area Network"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "WAN digunakan untuk?",
+      "options": [
+        "Jaringan area luas",
+        "Jaringan lokal saja",
+        "Komputer tunggal",
+        "Printer saja"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Contoh WAN adalah?",
+      "options": [
+        "Internet",
+        "LAN sekolah",
+        "Komputer pribadi",
+        "Bluetooth"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Perangkat yang menghubungkan jaringan adalah?",
+      "options": [
+        "Router",
+        "Keyboard",
+        "Mouse",
+        "Monitor"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Switch berfungsi untuk?",
+      "options": [
+        "Menghubungkan perangkat dalam jaringan",
+        "Menampilkan gambar",
+        "Mencetak dokumen",
+        "Mengetik"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Hub memiliki fungsi?",
+      "options": [
+        "Mengirim data ke semua perangkat",
+        "Menghapus data",
+        "Mengetik data",
+        "Memproses gambar"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Access Point digunakan untuk?",
+      "options": [
+        "Menyediakan koneksi WiFi",
+        "Mencetak dokumen",
+        "Menghapus virus",
+        "Mengetik data"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Modem berfungsi untuk?",
+      "options": [
+        "Menghubungkan komputer ke internet",
+        "Mengetik",
+        "Mencetak",
+        "Menggambar"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Router berfungsi untuk?",
+      "options": [
+        "Mengatur lalu lintas jaringan",
+        "Mencetak data",
+        "Mengetik data",
+        "Menyimpan file"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "IP Address digunakan untuk?",
+      "options": [
+        "Identifikasi perangkat di jaringan",
+        "Mencetak dokumen",
+        "Mengetik teks",
+        "Menggambar"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Contoh IP Address adalah?",
+      "options": [
+        "192.168.1.1",
+        "WWW.google.com",
+        "Router123",
+        "LAN-01"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "IPv4 menggunakan format?",
+      "options": [
+        "Angka desimal bertitik",
+        "Huruf saja",
+        "Kode QR",
+        "Gambar"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Jumlah bagian IPv4 adalah?",
+      "options": [
+        "4 bagian",
+        "2 bagian",
+        "6 bagian",
+        "8 bagian"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Fungsi kabel straight adalah?",
+      "options": [
+        "Menghubungkan perangkat berbeda",
+        "Menghubungkan komputer ke komputer",
+        "Menghapus data",
+        "Mempercepat CPU"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kabel cross digunakan untuk?",
+      "options": [
+        "Menghubungkan perangkat sejenis",
+        "Mencetak data",
+        "Menghubungkan internet",
+        "Menghapus file"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Contoh penggunaan kabel cross adalah?",
+      "options": [
+        "PC ke PC",
+        "PC ke printer",
+        "PC ke modem",
+        "PC ke switch"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Konfigurasi jaringan adalah?",
+      "options": [
+        "Pengaturan perangkat jaringan",
+        "Menghapus data",
+        "Mencetak file",
+        "Mengetik dokumen"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Sistem operasi jaringan digunakan untuk?",
+      "options": [
+        "Mengelola jaringan komputer",
+        "Mengedit gambar",
+        "Mencetak file",
+        "Mengetik teks"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Contoh sistem operasi jaringan adalah?",
+      "options": [
+        "Windows Server",
+        "Microsoft Word",
+        "Photoshop",
+        "Excel"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Troubleshooting jaringan berarti?",
+      "options": [
+        "Mencari dan memperbaiki masalah jaringan",
+        "Menghapus jaringan",
+        "Menambah virus",
+        "Mematikan komputer"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Masalah jaringan bisa disebabkan oleh?",
+      "options": [
+        "Kabel rusak",
+        "Komputer baru",
+        "Internet cepat",
+        "Software update"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Jika tidak ada koneksi internet, langkah pertama adalah?",
+      "options": [
+        "Periksa kabel dan koneksi",
+        "Ganti komputer",
+        "Hapus sistem",
+        "Matikan monitor"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Fungsi LAN adalah?",
+      "options": [
+        "Jaringan lokal",
+        "Jaringan global",
+        "Jaringan satelit",
+        "Jaringan listrik"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "MAN mencakup area?",
+      "options": [
+        "Satu kota",
+        "Satu rumah",
+        "Satu komputer",
+        "Satu perangkat"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "WAN mencakup?",
+      "options": [
+        "Seluruh dunia",
+        "Satu ruangan",
+        "Satu gedung",
+        "Satu perangkat"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Perangkat yang membagi jaringan adalah?",
+      "options": [
+        "Switch",
+        "Mouse",
+        "Keyboard",
+        "Monitor"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "WiFi termasuk jenis?",
+      "options": [
+        "Jaringan nirkabel",
+        "Jaringan kabel",
+        "Sistem operasi",
+        "Hardware input"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kabel jaringan disebut juga?",
+      "options": [
+        "Ethernet cable",
+        "USB cable",
+        "Power cable",
+        "Audio cable"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Fungsi IP Address adalah?",
+      "options": [
+        "Identitas perangkat",
+        "Menghapus file",
+        "Mengetik data",
+        "Mencetak gambar"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "DNS berfungsi untuk?",
+      "options": [
+        "Mengubah domain menjadi IP",
+        "Mencetak file",
+        "Menghapus data",
+        "Mengetik teks"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "LAN biasanya digunakan di?",
+      "options": [
+        "Sekolah atau kantor",
+        "Seluruh dunia",
+        "Antar negara",
+        "Satelit"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Perangkat jaringan yang paling dasar adalah?",
+      "options": [
+        "Switch",
+        "Kipas angin",
+        "Speaker",
+        "Scanner"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Tujuan troubleshooting adalah?",
+      "options": [
+        "Memperbaiki masalah",
+        "Menambah masalah",
+        "Menghapus data",
+        "Mengetik cepat"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Router menghubungkan?",
+      "options": [
+        "Beberapa jaringan",
+        "Satu komputer",
+        "Satu file",
+        "Satu printer"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Switch bekerja pada?",
+      "options": [
+        "Jaringan lokal",
+        "Internet global",
+        "Sistem operasi",
+        "Software aplikasi"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Kabel straight biasanya digunakan untuk?",
+      "options": [
+        "PC ke switch",
+        "PC ke PC",
+        "Router ke router",
+        "PC ke PC langsung"
+      ],
+      "answer": 0
+    },
+
+    {
+      "question": "Perbedaan LAN dan WAN adalah?",
+      "options": [
+        "LAN area kecil, WAN area luas",
+        "LAN lebih lambat",
+        "WAN tidak menggunakan internet",
+        "LAN hanya wireless"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Noise dalam jaringan adalah?",
+      "options": [
+        "Gangguan sinyal",
+        "Alamat IP",
+        "Perangkat keras",
+        "Software"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Interferensi menyebabkan?",
+      "options": [
+        "Gangguan komunikasi data",
+        "Internet lebih cepat",
+        "Data lebih aman",
+        "Tidak ada efek"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Fiber optic unggul karena?",
+      "options": [
+        "Kecepatan tinggi",
+        "Murah",
+        "Lambat",
+        "Tidak stabil"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Bandwidth adalah?",
+      "options": [
+        "Kapasitas transfer data",
+        "Nama kabel",
+        "Jenis router",
+        "Software jaringan"
+      ],
+      "answer": 0
+    }
+  ]
+}
