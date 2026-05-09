@@ -430,6 +430,26 @@
         "Mengatur hardware"
       ],
       "answer": 0
-    }
+    },
+    {
+  "question": "Apa fungsi utama dari kabel fiber optic dalam jaringan komputer?",
+  "options": [
+    "Mengirim data menggunakan cahaya dengan kecepatan tinggi",
+    "Mengirim data menggunakan listrik tegangan rendah",
+    "Menghubungkan perangkat tanpa jaringan",
+    "Menghapus gangguan jaringan"
+  ],
+  "answer": 0
+},
+{
+  "question": "Apa yang terjadi jika terjadi noise pada media transmisi?",
+  "options": [
+    "Data dapat terganggu atau rusak saat pengiriman",
+    "Kecepatan internet meningkat",
+    "Jaringan menjadi lebih aman",
+    "Perangkat menjadi lebih cepat"
+  ],
+  "answer": 0
+}
   ]
 }
