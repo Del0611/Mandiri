@@ -330,6 +330,106 @@
         "Mematikan komputer"
       ],
       "answer": 0
+    },
+    {
+      "question": "Kabel UTP biasanya digunakan untuk?",
+      "options": [
+        "Jaringan LAN",
+        "Satelit",
+        "Bluetooth",
+        "Infrared"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Fungsi utama switch adalah?",
+      "options": [
+        "Meneruskan data ke perangkat tujuan",
+        "Menghapus data",
+        "Menyimpan file",
+        "Menampilkan gambar"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Router bekerja pada lapisan?",
+      "options": [
+        "Network layer",
+        "Physical layer",
+        "Application layer",
+        "Data link layer"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "IP Address terdiri dari?",
+      "options": [
+        "Angka biner/desimal",
+        "Huruf saja",
+        "Gambar",
+        "Simbol acak"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Subnetting digunakan untuk?",
+      "options": [
+        "Membagi jaringan menjadi lebih kecil",
+        "Menghapus jaringan",
+        "Mematikan internet",
+        "Menambah virus"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Bandwidth adalah?",
+      "options": [
+        "Kapasitas transfer data",
+        "Jenis kabel",
+        "Nama router",
+        "Software jaringan"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Ping digunakan untuk?",
+      "options": [
+        "Mengecek koneksi jaringan",
+        "Menghapus file",
+        "Menginstal aplikasi",
+        "Mencetak data"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Packet loss adalah?",
+      "options": [
+        "Hilangnya data saat transmisi",
+        "Penambahan data",
+        "Penyimpanan data",
+        "Penghapusan file"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Firewall berfungsi untuk?",
+      "options": [
+        "Mengamankan jaringan",
+        "Mempercepat komputer",
+        "Menyimpan file",
+        "Menambah RAM"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "DNS server berfungsi untuk?",
+      "options": [
+        "Menerjemahkan domain ke IP",
+        "Menyimpan gambar",
+        "Menghapus virus",
+        "Mengatur hardware"
+      ],
+      "answer": 0
     }
   ]
 }
