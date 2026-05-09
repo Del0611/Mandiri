@@ -405,6 +405,57 @@
         "PC ke PC langsung"
       ],
       "answer": 0
+    },
+
+    {
+      "question": "Perbedaan LAN dan WAN adalah?",
+      "options": [
+        "LAN area kecil, WAN area luas",
+        "LAN lebih lambat",
+        "WAN tidak menggunakan internet",
+        "LAN hanya wireless"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Noise dalam jaringan adalah?",
+      "options": [
+        "Gangguan sinyal",
+        "Alamat IP",
+        "Perangkat keras",
+        "Software"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Interferensi menyebabkan?",
+      "options": [
+        "Gangguan komunikasi data",
+        "Internet lebih cepat",
+        "Data lebih aman",
+        "Tidak ada efek"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Fiber optic unggul karena?",
+      "options": [
+        "Kecepatan tinggi",
+        "Murah",
+        "Lambat",
+        "Tidak stabil"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Bandwidth adalah?",
+      "options": [
+        "Kapasitas transfer data",
+        "Nama kabel",
+        "Jenis router",
+        "Software jaringan"
+      ],
+      "answer": 0
     }
   ]
 }
