@@ -1,14 +1,381 @@
-{
-  "questions": [
-    {
-      "question": "Apa kepanjangan LAN?",
-      "options": [
-        "Local Area Network",
-        "Large Area Network",
-        "Long Area Network",
-        "Limited Area Network"
-      ],
-      "answer": 0
-    }
-  ]
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBT SEKOLAH</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
+
+body{
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#1e1e2f,#2a2a40);
+  color:white;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.container{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  padding:25px;
+  border-radius:15px;
+  width:90%;
+  max-width:500px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+button{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(135deg,#00c6ff,#0072ff);
+  color:white;
+  cursor:pointer;
+  font-size:15px;
+  transition:0.2s;
+}
+
+button:hover{
+  transform:scale(1.02);
+}
+
+#options button{
+  background:rgba(255,255,255,0.1);
+}
+
+#options button:hover{
+  background:rgba(255,255,255,0.2);
+}
+
+.hidden{
+  display:none;
+}
+
+#question{
+  margin:15px 0;
+}
+
+#progress{
+  margin-bottom:10px;
+  opacity:0.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<div class="container" id="menu">
+
+  <h2>Pilih Quiz</h2>
+
+  <div id="quizList"></div>
+
+</div>
+
+<!-- QUIZ -->
+<div class="container hidden" id="quiz">
+
+  <div id="progress"></div>
+
+  <h3 id="question"></h3>
+
+  <div id="options"></div>
+
+</div>
+
+<!-- RESULT -->
+<div class="container hidden" id="result"></div>
+
+<script>
+
+// ================= DAFTAR QUIZ =================
+
+const daftarQuiz = [
+
+  {
+    nama:"10 Dasar TKJ K3LH",
+    file:"01. kuis K3LH.json"
+  },
+
+  {
+    nama:"10 Dasar TKJ Sistem Komputer",
+    file:"02. kuis Sistem Komputer.json"
+  },
+
+  {
+    nama:"10 Dasar TKJ Jaringan Komputer",
+    file:"03. Kuis Jaringan Komputer.json"
+  }
+
+];
+
+// ================= BUAT TOMBOL QUIZ =================
+
+const quizList =
+  document.getElementById("quizList");
+
+daftarQuiz.forEach(quiz=>{
+
+  const btn =
+    document.createElement("button");
+
+  btn.innerText = quiz.nama;
+
+  btn.onclick = ()=>{
+    loadQuiz(quiz.file);
+  };
+
+  quizList.appendChild(btn);
+
+});
+
+// ================= VAR =================
+
+let questions = [];
+let current = 0;
+let score = 0;
+
+// ================= LOAD QUIZ =================
+
+async function loadQuiz(file){
+
+  try{
+
+    const response =
+      await fetch("2025_2026/10. Dasar Kejuruan/kuis/" + file);
+
+    const data =
+      await response.json();
+
+    questions = shuffleArray(
+      data.questions.map(q =>
+        shuffleQuestion(q)
+      )
+    );
+
+    current = 0;
+    score = 0;
+
+    document.getElementById("menu")
+      .classList.add("hidden");
+
+    document.getElementById("quiz")
+      .classList.remove("hidden");
+
+    showQuestion();
+
+  }catch(error){
+
+    alert("File soal tidak ditemukan!");
+
+    console.log(error);
+
+  }
+
+}
+
+// ================= TAMPILKAN SOAL =================
+
+function showQuestion(){
+
+  const q = questions[current];
+
+  document.getElementById("progress")
+    .innerText =
+    `Soal ${current+1} / ${questions.length}`;
+
+  document.getElementById("question")
+    .innerText =
+    q.question;
+
+  const optionsDiv =
+    document.getElementById("options");
+
+  optionsDiv.innerHTML = "";
+
+  q.options.forEach((opt,i)=>{
+
+    const btn =
+      document.createElement("button");
+
+    btn.innerText =
+      String.fromCharCode(65+i)+". "+opt;
+
+    btn.onclick = ()=>{
+
+      if(i === q.answer){
+
+        btn.style.background = "#00cc66";
+
+        score++;
+
+      }else{
+
+        btn.style.background = "#ff4444";
+
+      }
+
+      disableButtons();
+
+      setTimeout(nextQuestion,500);
+
+    };
+
+    optionsDiv.appendChild(btn);
+
+  });
+
+}
+
+// ================= NEXT =================
+
+function nextQuestion(){
+
+  current++;
+
+  if(current < questions.length){
+
+    showQuestion();
+
+  }else{
+
+    showResult();
+
+  }
+
+}
+
+// ================= DISABLE BUTTON =================
+
+function disableButtons(){
+
+  document
+    .querySelectorAll("#options button")
+    .forEach(btn=>{
+      btn.disabled = true;
+    });
+
+}
+
+// ================= HASIL =================
+
+function showResult(){
+
+  document.getElementById("quiz")
+    .classList.add("hidden");
+
+  const nilai =
+    Math.round(
+      (score / questions.length) * 100
+    );
+
+  let grade = "";
+
+  if(nilai >= 90){
+
+    grade = "A";
+
+  }else if(nilai >= 80){
+
+    grade = "B";
+
+  }else if(nilai >= 70){
+
+    grade = "C";
+
+  }else if(nilai >= 60){
+
+    grade = "D";
+
+  }else{
+
+    grade = "E";
+
+  }
+
+  const result =
+    document.getElementById("result");
+
+  result.classList.remove("hidden");
+
+  result.innerHTML = `
+
+    <h2>Quiz Selesai</h2>
+
+    <br>
+
+    <h1>Nilai ${nilai}</h1>
+
+    <br>
+
+    <p>
+      Benar ${score}
+      dari
+      ${questions.length} soal
+    </p>
+
+    <br>
+
+    <h2>Grade ${grade}</h2>
+
+    <br>
+
+    <button onclick="location.reload()">
+      Kembali ke Menu
+    </button>
+
+  `;
+
+}
+
+// ================= SHUFFLE =================
+
+function shuffleArray(arr){
+
+  return arr.sort(()=>
+    Math.random()-0.5
+  );
+
+}
+
+// ================= ACAK JAWABAN =================
+
+function shuffleQuestion(q){
+
+  const options = [...q.options];
+
+  const correct =
+    q.options[q.answer];
+
+  shuffleArray(options);
+
+  return{
+
+    question:q.question,
+
+    options:options,
+
+    answer:options.indexOf(correct)
+
+  };
+
+}
+
+</script>
+
+</body>
+</html>
