@@ -1,3 +1,6 @@
+# kuis kelas 12
+https://share.gemini.google/4EERENSOUcOT
+
 
 # link website praktek cisco
 
