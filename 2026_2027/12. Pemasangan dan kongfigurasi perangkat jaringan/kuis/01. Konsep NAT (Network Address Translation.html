@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuis Konsep NAT (Network Address Translation)</title>
+    <title>Pembelajaran & Kuis Konsep NAT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -12,14 +12,14 @@
             background-color: #f3f4f6;
         }
         .correct-answer {
-            background-color: #d1fae5 !important; /* emerald-100 */
-            border-color: #10b981 !important; /* emerald-500 */
-            color: #065f46 !important; /* emerald-800 */
+            background-color: #d1fae5 !important; 
+            border-color: #10b981 !important; 
+            color: #065f46 !important; 
         }
         .wrong-answer {
-            background-color: #fee2e2 !important; /* red-100 */
-            border-color: #ef4444 !important; /* red-500 */
-            color: #991b1b !important; /* red-800 */
+            background-color: #fee2e2 !important; 
+            border-color: #ef4444 !important; 
+            color: #991b1b !important; 
         }
         .option-btn {
             transition: all 0.2s ease-in-out;
@@ -32,21 +32,314 @@
             cursor: not-allowed;
             opacity: 0.8;
         }
+        
+        /* Styling untuk tabel di mode materi */
+        .materi-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        .materi-table th {
+            background-color: #f8fafc;
+            font-weight: 700;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e2e8f0;
+            color: #334155;
+        }
+        .materi-table td {
+            padding: 0.75rem 1rem;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+        }
+        .materi-table tr:nth-child(even) {
+            background-color: #fcfcfc;
+        }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4">
 
-    <div class="bg-white rounded-2xl shadow-xl w-full max-w-3xl overflow-hidden p-6 md:p-10 border border-gray-100">
+    <div class="bg-white rounded-2xl shadow-xl w-full max-w-4xl overflow-hidden p-6 md:p-10 border border-gray-100 relative">
         
-        <!-- Header -->
-        <div class="text-center mb-8">
-            <h1 class="text-3xl font-extrabold text-gray-800 mb-2 tracking-tight">Kuis Konsep NAT</h1>
-            <p class="text-blue-600 font-medium">Network Address Translation - BAB 12</p>
+        <!-- ================= MAIN MENU ================= -->
+        <div id="main-menu" class="text-center transition-opacity duration-500">
+            <div class="mb-10">
+                <div class="inline-block bg-blue-100 text-blue-800 px-4 py-1.5 rounded-full font-bold text-sm mb-4">BAB 12</div>
+                <h1 class="text-4xl font-extrabold text-gray-800 mb-3 tracking-tight">Konsep NAT</h1>
+                <p class="text-gray-500 font-medium text-lg max-w-xl mx-auto">Network Address Translation. Pilih mode di bawah ini untuk mulai belajar atau menguji pemahaman Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <!-- Card Mode Materi -->
+                <button onclick="showMateri()" class="group bg-white border-2 border-gray-200 hover:border-blue-500 rounded-2xl p-6 text-left transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="text-5xl mb-4 group-hover:scale-110 transition-transform origin-left">📚</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">Mode Materi</h3>
+                    <p class="text-gray-500 text-sm">Baca dan pelajari konsep, fungsi, jenis, serta cara kerja NAT secara lengkap.</p>
+                </button>
+
+                <!-- Card Mode Kuis -->
+                <button onclick="showQuizStart()" class="group bg-white border-2 border-gray-200 hover:border-emerald-500 rounded-2xl p-6 text-left transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="text-5xl mb-4 group-hover:scale-110 transition-transform origin-left">🎮</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-emerald-600 transition-colors">Mode Kuis</h3>
+                    <p class="text-gray-500 text-sm">Uji pemahaman dengan 30 soal tantangan. Waktu 15 menit & batas salah 5 kali!</p>
+                </button>
+            </div>
         </div>
 
-        <!-- Start Screen -->
-        <div id="start-screen" class="text-center transition-opacity duration-500">
-            <p class="text-gray-600 mb-6 text-lg">Uji pemahaman Anda tentang konsep, fungsi, jenis, dan cara kerja NAT dengan 30 pertanyaan pilihan ganda.</p>
+        <!-- ================= MATERI CONTAINER ================= -->
+        <div id="materi-container" class="hidden">
+            <div class="flex items-center justify-between border-b border-gray-200 pb-4 mb-6 sticky top-0 bg-white z-10 pt-2">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-gray-800">Materi Konsep NAT</h2>
+                    <p class="text-blue-600 text-sm font-bold">BAB 12</p>
+                </div>
+                <button onclick="showMenu()" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold py-2 px-4 rounded-lg flex items-center gap-2 transition-colors">
+                    <span>⬅️</span> Menu
+                </button>
+            </div>
+
+            <!-- Konten Materi -->
+            <div class="text-gray-700 space-y-8 h-[65vh] overflow-y-auto pr-4 custom-scrollbar">
+                
+                <section>
+                    <h3 class="text-xl font-bold text-blue-700 border-b-2 border-blue-100 pb-2 mb-4">12.1 Pengertian NAT</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">A. Definisi NAT</h4>
+                            <p>NAT (Network Address Translation) adalah teknologi yang memungkinkan pengubahan alamat IP (Internet Protocol) saat paket data melewati perangkat router atau firewall. NAT memungkinkan beberapa perangkat dalam jaringan lokal (LAN) menggunakan satu alamat IP publik untuk mengakses internet.</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-gray-800">B. Mengapa NAT Dibutuhkan?</h4>
+                            <p class="mb-2">Network Address Translation (NAT) dibutuhkan untuk memungkinkan banyak perangkat dalam jaringan lokal (privat) mengakses internet menggunakan satu alamat IP publik.</p>
+                            <div class="overflow-x-auto">
+                                <table class="materi-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Masalah</th>
+                                            <th>Solusi dengan NAT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Keterbatasan IPv4 (hanya ~4.3 miliar)</td>
+                                            <td>Satu IP publik untuk banyak perangkat</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Keamanan</td>
+                                            <td>IP private tidak terekspos ke internet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Efisiensi</td>
+                                            <td>Menghemat penggunaan IP publik</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-gray-800">C. Istilah Penting dalam NAT</h4>
+                            <div class="overflow-x-auto">
+                                <table class="materi-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Istilah</th>
+                                            <th>Penjelasan</th>
+                                            <th>Contoh</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Inside Local</strong></td>
+                                            <td>IP perangkat di jaringan lokal</td>
+                                            <td>192.168.1.10</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Inside Global</strong></td>
+                                            <td>IP publik hasil NAT</td>
+                                            <td>202.10.20.30</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Outside Local</strong></td>
+                                            <td>IP tujuan dari sisi LAN</td>
+                                            <td>10.0.0.1</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Outside Global</strong></td>
+                                            <td>IP tujuan dari sisi WAN</td>
+                                            <td>8.8.8.8</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-bold text-blue-700 border-b-2 border-blue-100 pb-2 mb-4">12.2 Fungsi dan Manfaat NAT</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2">A. Fungsi NAT</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Menghemat IP Publik:</strong> Satu IP publik digunakan oleh banyak perangkat.</li>
+                                <li><strong>Menyembunyikan IP Private:</strong> Meningkatkan keamanan jaringan.</li>
+                                <li><strong>Mengatur Lalu Lintas:</strong> Port forwarding untuk layanan tertentu.</li>
+                                <li><strong>Load Sharing:</strong> Mendistribusikan traffic ke beberapa server.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2">B. Manfaat NAT</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Keamanan:</strong> Perangkat internal tidak langsung terlihat dari luar.</li>
+                                <li><strong>Efisiensi Biaya:</strong> Tidak perlu membeli IP publik untuk setiap perangkat.</li>
+                                <li><strong>Fleksibilitas:</strong> Mudah mengubah ISP tanpa mengubah IP internal.</li>
+                                <li><strong>Skalabilitas:</strong> Mudah menambah perangkat baru.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-bold text-blue-700 border-b-2 border-blue-100 pb-2 mb-4">12.3 Jenis-jenis NAT</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">A. Berdasarkan Tipe Translasi</h4>
+                            
+                            <div class="bg-gray-50 p-4 rounded-xl mb-4 border border-gray-200">
+                                <h5 class="font-bold text-blue-800">1. Static NAT (1:1)</h5>
+                                <p class="mb-2">Memetakan satu alamat IP privat secara permanen ke satu alamat IP publik. Hubungannya bersifat dua arah (timbal balik).</p>
+                                <ul class="list-disc pl-5 text-sm space-y-1">
+                                    <li><strong>Cara Kerja:</strong> Alamat IP lokal 192.168.1.10 akan selalu diterjemahkan menjadi IP publik 202.10.20.30.</li>
+                                    <li><strong>Fungsi Utama:</strong> Digunakan untuk perangkat lokal yang harus bisa diakses secara konstan dari luar internet (Server Web, Email, FTP).</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-gray-50 p-4 rounded-xl mb-4 border border-gray-200">
+                                <h5 class="font-bold text-blue-800">2. Dynamic NAT (Pool)</h5>
+                                <p class="mb-2">Memetakan IP privat ke IP publik secara otomatis dari sekumpulan (pool) IP publik yang tersedia, namun tetap berbasis satu-ke-satu saat terhubung.</p>
+                                <ul class="list-disc pl-5 text-sm space-y-1">
+                                    <li><strong>Cara Kerja:</strong> Komputer 192.168.1.10 ingin ke internet, router meminjamkan IP publik 202.10.20.30. Selesai sesi, IP dikembalikan ke pool.</li>
+                                    <li><strong>Kelemahan:</strong> Jika jumlah IP publik di pool habis, komputer berikutnya harus mengantre.</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                                <h5 class="font-bold text-blue-800">3. PAT / NAT Overload (Many:1)</h5>
+                                <p class="mb-2">Jenis NAT paling populer karena memungkinkan banyak IP privat menggunakan satu IP publik yang sama secara bersamaan dengan memanfaatkan nomor port unik.</p>
+                                <ul class="list-disc pl-5 text-sm space-y-1">
+                                    <li><strong>Cara Kerja:</strong> Komputer .10, .11, .12 keluar menggunakan IP 202.10.20.30. Agar paket tidak tertukar, router memberikan nomor port berbeda (misal: :12345, :12346).</li>
+                                    <li><strong>Fungsi Utama:</strong> Metode pada jaringan rumah dan kantor kecil (SOHO) karena sangat menghemat biaya IP publik.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2">B. Berdasarkan Arah Paket</h4>
+                            <div class="overflow-x-auto">
+                                <table class="materi-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Jenis NAT</th>
+                                            <th>Penjelasan</th>
+                                            <th>Contoh Penggunaan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Source NAT (SNAT)</strong></td>
+                                            <td>Mengubah IP sumber</td>
+                                            <td>PC ke internet (masquerade)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Destination NAT (DNAT)</strong></td>
+                                            <td>Mengubah IP tujuan</td>
+                                            <td>Port forwarding ke server</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-bold text-blue-700 border-b-2 border-blue-100 pb-2 mb-4">12.4 Cara Kerja NAT & Tabel</h3>
+                    <div class="overflow-x-auto">
+                        <table class="materi-table">
+                            <thead>
+                                <tr>
+                                    <th>Inside Local</th>
+                                    <th>Inside Global</th>
+                                    <th>Outside Global</th>
+                                    <th>Port</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>192.168.1.10</td>
+                                    <td>202.10.20.30</td>
+                                    <td>8.8.8.8</td>
+                                    <td>12345</td>
+                                </tr>
+                                <tr>
+                                    <td>192.168.1.11</td>
+                                    <td>202.10.20.30</td>
+                                    <td>142.250.185.46</td>
+                                    <td>12346</td>
+                                </tr>
+                                <tr>
+                                    <td>192.168.1.12</td>
+                                    <td>202.10.20.30</td>
+                                    <td>13.107.42.14</td>
+                                    <td>12347</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="pb-8">
+                    <h3 class="text-xl font-bold text-blue-700 border-b-2 border-blue-100 pb-2 mb-4">12.5 Kelebihan dan Kekurangan NAT</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-emerald-700 mb-2 flex items-center gap-2"><span>➕</span> Kelebihan</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Hemat IP:</strong> Satu IP publik untuk banyak perangkat.</li>
+                                <li><strong>Keamanan:</strong> Perangkat internal tersembunyi.</li>
+                                <li><strong>Mudah:</strong> Konfigurasi sederhana.</li>
+                                <li><strong>Kompatibel:</strong> Mendukung semua protokol.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-red-700 mb-2 flex items-center gap-2"><span>➖</span> Kekurangan</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>P2P:</strong> Sulit untuk aplikasi yang butuh koneksi langsung.</li>
+                                <li><strong>Delay:</strong> Proses translasi menambah latency.</li>
+                                <li><strong>Troubleshooting:</strong> Sulit melacak koneksi dari luar.</li>
+                                <li><strong>IPv6:</strong> NAT tidak diperlukan di IPv6.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- ================= START KUIS SCREEN ================= -->
+        <div id="start-screen" class="hidden text-center transition-opacity duration-500">
+            <div class="flex justify-start mb-4">
+                <button onclick="showMenu()" class="text-gray-500 hover:text-gray-800 font-bold py-1 px-3 rounded-lg flex items-center gap-1 transition-colors bg-gray-100">
+                    <span>⬅️</span> Kembali
+                </button>
+            </div>
+            
+            <h2 class="text-3xl font-extrabold text-gray-800 mb-2 tracking-tight">Kuis Konsep NAT</h2>
+            <p class="text-gray-600 mb-6 text-lg">Uji pemahaman Anda dengan 30 pertanyaan pilihan ganda.</p>
             
             <div class="mb-8 max-w-md mx-auto text-left bg-gray-50 p-6 rounded-xl border border-gray-200">
                 <label for="player-name" class="block text-gray-700 font-bold mb-2">Nama Pemain:</label>
@@ -63,7 +356,7 @@
             </button>
         </div>
 
-        <!-- Quiz Container -->
+        <!-- ================= QUIZ CONTAINER ================= -->
         <div id="quiz-container" class="hidden">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 border-b pb-4 gap-4">
                 <div class="flex flex-col">
@@ -85,7 +378,7 @@
                 </div>
             </div>
 
-            <div class="flex justify-between items-center mt-6">
+            <div class="flex justify-between items-center mt-6 h-12">
                 <div id="feedback" class="text-lg font-bold"></div>
                 <button id="next-btn" onclick="nextQuestion()" class="hidden bg-gray-800 hover:bg-gray-900 text-white font-bold py-2.5 px-6 rounded-lg shadow transition duration-300">
                     Selanjutnya ➡️
@@ -93,12 +386,12 @@
             </div>
         </div>
 
-        <!-- Result Container -->
+        <!-- ================= RESULT CONTAINER ================= -->
         <div id="result-container" class="hidden text-center">
             <h3 id="result-title" class="text-3xl font-black text-gray-800 mb-2">Kuis Selesai!</h3>
             <p class="text-lg font-semibold text-blue-600 mb-6 border-b pb-4 inline-block">Pemain: <span id="display-player-name" class="font-bold text-xl uppercase"></span></p>
             
-            <div class="text-7xl mb-4 animate-bounce mt-2" id="result-icon">🏆</div>
+            <div class="text-7xl mb-4 mt-2" id="result-icon">🏆</div>
             <p class="text-gray-500 font-medium mb-1 uppercase tracking-wider text-sm">Skor Akhir Anda</p>
             <div class="text-6xl font-extrabold text-blue-600 mb-4 drop-shadow-sm">
                 <span id="final-score">0</span><span class="text-3xl text-gray-400">/30</span>
@@ -106,16 +399,21 @@
             <p id="result-message" class="text-lg font-medium mb-6 text-gray-700 bg-gray-50 p-4 rounded-lg inline-block border border-gray-200"></p>
 
             <!-- Review Section -->
-            <div id="review-container" class="mt-4 mb-8 text-left hidden flex-col max-h-96 overflow-y-auto bg-gray-50 p-5 rounded-xl border border-gray-200 shadow-inner">
+            <div id="review-container" class="mt-4 mb-8 text-left hidden flex-col max-h-80 overflow-y-auto bg-gray-50 p-5 rounded-xl border border-gray-200 shadow-inner custom-scrollbar">
                 <h4 class="text-lg font-extrabold text-gray-800 mb-4 sticky top-0 bg-gray-50 py-2 border-b-2 border-gray-200 z-10 flex items-center gap-2"><span>📝</span> Review Jawaban Salah</h4>
                 <div id="review-list" class="space-y-4">
                     <!-- Daftar jawaban salah akan dirender di sini -->
                 </div>
             </div>
 
-            <button onclick="restartQuiz()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                Coba Lagi
-            </button>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-4">
+                <button onclick="restartQuiz()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all transform hover:-translate-y-1">
+                    Coba Lagi
+                </button>
+                <button onclick="showMenu()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-8 rounded-full text-lg shadow transition-all transform hover:-translate-y-1">
+                    Ke Menu Utama
+                </button>
+            </div>
         </div>
 
     </div>
@@ -123,343 +421,83 @@
     <script>
         // Data Pertanyaan (30 Soal berdasarkan materi BAB 12)
         const quizData = [
-            {
-                question: "Apa definisi dari NAT (Network Address Translation)?",
-                options: [
-                    "Protokol keamanan untuk mengenkripsi data di internet",
-                    "Teknologi pengubahan alamat IP saat paket data melewati router/firewall",
-                    "Metode untuk mempercepat kecepatan koneksi internet",
-                    "Sistem untuk mengubah nama domain menjadi alamat IP"
-                ],
-                correct: 1
-            },
-            {
-                question: "Mengapa NAT sangat dibutuhkan dalam jaringan saat ini?",
-                options: [
-                    "Karena keterbatasan jumlah alamat IPv6",
-                    "Untuk menggantikan peran router sepenuhnya",
-                    "Karena keterbatasan jumlah alamat IPv4 yang tersedia",
-                    "Agar semua komputer memiliki alamat IP publik sendiri"
-                ],
-                correct: 2
-            },
-            {
-                question: "Bagaimana NAT membantu mengatasi keterbatasan IPv4?",
-                options: [
-                    "Dengan menghapus IP private dari jaringan",
-                    "Memungkinkan banyak perangkat di LAN menggunakan satu IP publik",
-                    "Mengubah semua IP publik menjadi IP private",
-                    "Meningkatkan kapasitas bandwidth jaringan"
-                ],
-                correct: 1
-            },
-            {
-                question: "Alamat IP perangkat yang berada di dalam jaringan lokal (privat) disebut dengan istilah...",
-                options: [
-                    "Inside Local",
-                    "Inside Global",
-                    "Outside Local",
-                    "Outside Global"
-                ],
-                correct: 0
-            },
-            {
-                question: "Alamat IP publik yang digunakan oleh perangkat lokal saat terhubung ke internet disebut...",
-                options: [
-                    "Inside Local",
-                    "Inside Global",
-                    "Outside Local",
-                    "Outside Global"
-                ],
-                correct: 1
-            },
-            {
-                question: "IP 8.8.8.8 yang merupakan tujuan dari sisi WAN dalam istilah NAT disebut sebagai...",
-                options: [
-                    "Inside Local",
-                    "Inside Global",
-                    "Outside Local",
-                    "Outside Global"
-                ],
-                correct: 3
-            },
-            {
-                question: "Manakah di bawah ini yang BUKAN merupakan fungsi utama NAT?",
-                options: [
-                    "Menghemat penggunaan IP Publik",
-                    "Menyembunyikan IP Private",
-                    "Meningkatkan resolusi grafis website",
-                    "Mengatur lalu lintas melalui Port Forwarding"
-                ],
-                correct: 2
-            },
-            {
-                question: "Salah satu manfaat NAT dari segi keamanan adalah...",
-                options: [
-                    "Mencegah masuknya virus secara langsung ke dalam kabel",
-                    "Perangkat internal tidak langsung terlihat dari internet",
-                    "Membuat kata sandi Wi-Fi lebih sulit ditebak",
-                    "Mengenali wajah pengguna sebelum mengakses jaringan"
-                ],
-                correct: 1
-            },
-            {
-                question: "Dari segi efisiensi biaya, apa manfaat yang diberikan oleh NAT?",
-                options: [
-                    "Tidak perlu membayar tagihan listrik router",
-                    "Dapat menggunakan internet tanpa ISP",
-                    "Tidak perlu membeli/menyewa banyak IP publik untuk setiap perangkat",
-                    "Mengurangi biaya pembelian kabel LAN"
-                ],
-                correct: 2
-            },
-            {
-                question: "Apa yang dimaksud dengan Static NAT?",
-                options: [
-                    "Pemetaan banyak IP private ke satu IP publik",
-                    "Pemetaan IP private ke IP publik secara acak dari pool",
-                    "Pemetaan satu alamat IP privat secara permanen ke satu alamat IP publik (1:1)",
-                    "Pemetaan yang tidak menggunakan alamat IP"
-                ],
-                correct: 2
-            },
-            {
-                question: "Kondisi jaringan seperti apa yang paling cocok menggunakan Static NAT?",
-                options: [
-                    "Jaringan rumah dengan banyak HP",
-                    "Perangkat lokal yang harus selalu bisa diakses dari luar seperti Server Web",
-                    "Jaringan publik di kafe",
-                    "Komputer klien yang hanya digunakan untuk browsing"
-                ],
-                correct: 1
-            },
-            {
-                question: "Bagaimana cara kerja Dynamic NAT?",
-                options: [
-                    "Memetakan IP secara permanen (1:1)",
-                    "Memetakan IP privat ke IP publik dari sekumpulan (pool) IP yang tersedia",
-                    "Menggunakan port untuk membedakan pengguna",
-                    "Menolak koneksi jika tidak memiliki password"
-                ],
-                correct: 1
-            },
-            {
-                question: "Apa kelemahan utama dari penggunaan Dynamic NAT?",
-                options: [
-                    "Kecepatannya sangat lambat",
-                    "Sangat rentan terhadap peretasan",
-                    "Jika pool IP publik habis terpakai, komputer berikutnya harus mengantre",
-                    "Tidak bisa digunakan untuk mengakses website"
-                ],
-                correct: 2
-            },
-            {
-                question: "Jenis NAT apa yang paling populer dan digunakan pada jaringan rumah/kantor kecil (SOHO)?",
-                options: [
-                    "Static NAT",
-                    "Dynamic NAT",
-                    "PAT / NAT Overload",
-                    "Destination NAT"
-                ],
-                correct: 2
-            },
-            {
-                question: "Bagaimana cara PAT (NAT Overload) membedakan paket data dari banyak komputer yang menggunakan satu IP publik yang sama?",
-                options: [
-                    "Dengan menggunakan alamat MAC dari perangkat",
-                    "Dengan memanfaatkan nomor port yang berbeda",
-                    "Dengan mengubah nama hostname komputer",
-                    "Dengan menambahkan password di setiap paket"
-                ],
-                correct: 1
-            },
-            {
-                question: "Tipe NAT berdasarkan arah paket yang berfungsi mengubah IP sumber (Source) saat menuju ke internet disebut...",
-                options: [
-                    "Destination NAT (DNAT)",
-                    "Port Forwarding",
-                    "Source NAT (SNAT) / Masquerade",
-                    "Static Routing"
-                ],
-                correct: 2
-            },
-            {
-                question: "Destination NAT (DNAT) biasanya digunakan untuk...",
-                options: [
-                    "Memberikan akses internet ke komputer klien",
-                    "Mengubah IP tujuan, contohnya pada proses port forwarding ke server",
-                    "Menyembunyikan identitas router",
-                    "Mengacak urutan pengiriman paket"
-                ],
-                correct: 1
-            },
-            {
-                question: "Ilustrasi berikut: '192.168.1.10 → 202.10.20.30:12345, 192.168.1.11 → 202.10.20.30:12346' adalah contoh dari...",
-                options: [
-                    "Static NAT",
-                    "Dynamic NAT",
-                    "NAT Overload (PAT)",
-                    "DNAT"
-                ],
-                correct: 2
-            },
-            {
-                question: "Ketika komputer di LAN mengirim permintaan akses web ke internet melalui router NAT (PAT), IP asal (Source IP) pada paket akan diubah menjadi...",
-                options: [
-                    "IP tujuan (Destination IP)",
-                    "IP Private komputer tersebut",
-                    "IP Publik milik router (Inside Global)",
-                    "Alamat MAC router"
-                ],
-                correct: 2
-            },
-            {
-                question: "Bagaimana router tahu ke komputer mana paket balasan dari internet harus dikirimkan?",
-                options: [
-                    "Dengan menebak secara acak",
-                    "Melihat dan mencocokkan data pada Tabel NAT (NAT Table)",
-                    "Bertanya kepada ISP",
-                    "Mengirimkan ke semua komputer di jaringan (Broadcast)"
-                ],
-                correct: 1
-            },
-            {
-                question: "Kolom apa yang krusial pada NAT Table yang digunakan oleh PAT agar paket tidak tertukar?",
-                options: [
-                    "MAC Address",
-                    "Nomor Port",
-                    "Nama Domain",
-                    "Subnet Mask"
-                ],
-                correct: 1
-            },
-            {
-                question: "Manakah yang merupakan keuntungan dari skalabilitas NAT?",
-                options: [
-                    "Sulit melacak koneksi dari luar",
-                    "Harus membeli IP publik baru",
-                    "Mudah menambah perangkat baru di LAN tanpa perlu izin/IP publik tambahan dari ISP",
-                    "Proses translasi mempercepat ping"
-                ],
-                correct: 2
-            },
-            {
-                question: "Kelebihan NAT dalam hal kompatibilitas adalah...",
-                options: [
-                    "Mendukung semua perangkat tanpa kecuali",
-                    "Hanya mendukung sistem operasi Windows",
-                    "Kompatibel dan mendukung berbagai jenis protokol jaringan",
-                    "Tidak bisa digunakan bersamaan dengan firewall"
-                ],
-                correct: 2
-            },
-            {
-                question: "Salah satu kekurangan NAT adalah terkait komunikasi Peer-to-Peer (P2P), alasannya karena...",
-                options: [
-                    "P2P menggunakan terlalu banyak bandwidth",
-                    "Aplikasi yang butuh koneksi langsung (end-to-end) akan kesulitan karena IP disembunyikan",
-                    "P2P dilarang oleh pemerintah",
-                    "NAT memblokir semua file sharing"
-                ],
-                correct: 1
-            },
-            {
-                question: "Proses pengubahan alamat IP (translasi) pada router dapat menyebabkan...",
-                options: [
-                    "Peningkatan kecepatan yang drastis",
-                    "Kerusakan pada kabel LAN",
-                    "Delay atau penambahan Latency (jeda waktu) pada paket data",
-                    "Perubahan data di dalam paket (isi file)"
-                ],
-                correct: 2
-            },
-            {
-                question: "Mengapa NAT dapat membuat proses Troubleshooting jaringan menjadi lebih sulit?",
-                options: [
-                    "Karena sulit melacak atau mengidentifikasi host yang bermasalah secara langsung dari luar jaringan",
-                    "Karena NAT menghapus log router",
-                    "Karena tidak ada teknisi yang memahami NAT",
-                    "Karena NAT menonaktifkan fitur ping"
-                ],
-                correct: 0
-            },
-            {
-                question: "Apakah NAT sangat diperlukan pada jaringan yang murni menggunakan IPv6?",
-                options: [
-                    "Ya, karena IPv6 juga kekurangan alamat",
-                    "Ya, untuk mempercepat koneksi",
-                    "Tidak, karena jumlah alamat IPv6 sangat melimpah sehingga NAT tidak terlalu dibutuhkan lagi",
-                    "Tidak tahu"
-                ],
-                correct: 2
-            },
-            {
-                question: "Tipe NAT apa yang menghubungkan banyak IP private dengan satu IP publik?",
-                options: [
-                    "NAT Statis",
-                    "NAT Dinamis",
-                    "NAT Overload (PAT)",
-                    "NAT Pool"
-                ],
-                correct: 2
-            },
-            {
-                question: "Dalam tabel NAT, kombinasi '192.168.1.10:80' merupakan contoh pemetaan yang menggabungkan antara...",
-                options: [
-                    "IP Address dan Subnet Mask",
-                    "IP Address dan Port Number",
-                    "MAC Address dan IP Address",
-                    "Nama Domain dan Port Number"
-                ],
-                correct: 1
-            },
-            {
-                question: "Fungsi Load Sharing pada NAT berguna untuk...",
-                options: [
-                    "Menghapus IP yang tidak terpakai",
-                    "Menggabungkan dua ISP menjadi satu",
-                    "Mendistribusikan traffic jaringan secara merata ke beberapa server",
-                    "Berbagi file antara dua komputer"
-                ],
-                correct: 2
-            }
+            { question: "Apa definisi dari NAT (Network Address Translation)?", options: ["Protokol keamanan untuk mengenkripsi data di internet", "Teknologi pengubahan alamat IP saat paket data melewati router/firewall", "Metode untuk mempercepat kecepatan koneksi internet", "Sistem untuk mengubah nama domain menjadi alamat IP"], correct: 1 },
+            { question: "Mengapa NAT sangat dibutuhkan dalam jaringan saat ini?", options: ["Karena keterbatasan jumlah alamat IPv6", "Untuk menggantikan peran router sepenuhnya", "Karena keterbatasan jumlah alamat IPv4 yang tersedia", "Agar semua komputer memiliki alamat IP publik sendiri"], correct: 2 },
+            { question: "Bagaimana NAT membantu mengatasi keterbatasan IPv4?", options: ["Dengan menghapus IP private dari jaringan", "Memungkinkan banyak perangkat di LAN menggunakan satu IP publik", "Mengubah semua IP publik menjadi IP private", "Meningkatkan kapasitas bandwidth jaringan"], correct: 1 },
+            { question: "Alamat IP perangkat yang berada di dalam jaringan lokal (privat) disebut dengan istilah...", options: ["Inside Local", "Inside Global", "Outside Local", "Outside Global"], correct: 0 },
+            { question: "Alamat IP publik yang digunakan oleh perangkat lokal saat terhubung ke internet disebut...", options: ["Inside Local", "Inside Global", "Outside Local", "Outside Global"], correct: 1 },
+            { question: "IP 8.8.8.8 yang merupakan tujuan dari sisi WAN dalam istilah NAT disebut sebagai...", options: ["Inside Local", "Inside Global", "Outside Local", "Outside Global"], correct: 3 },
+            { question: "Manakah di bawah ini yang BUKAN merupakan fungsi utama NAT?", options: ["Menghemat penggunaan IP Publik", "Menyembunyikan IP Private", "Meningkatkan resolusi grafis website", "Mengatur lalu lintas melalui Port Forwarding"], correct: 2 },
+            { question: "Salah satu manfaat NAT dari segi keamanan adalah...", options: ["Mencegah masuknya virus secara langsung ke dalam kabel", "Perangkat internal tidak langsung terlihat dari internet", "Membuat kata sandi Wi-Fi lebih sulit ditebak", "Mengenali wajah pengguna sebelum mengakses jaringan"], correct: 1 },
+            { question: "Dari segi efisiensi biaya, apa manfaat yang diberikan oleh NAT?", options: ["Tidak perlu membayar tagihan listrik router", "Dapat menggunakan internet tanpa ISP", "Tidak perlu membeli/menyewa banyak IP publik untuk setiap perangkat", "Mengurangi biaya pembelian kabel LAN"], correct: 2 },
+            { question: "Apa yang dimaksud dengan Static NAT?", options: ["Pemetaan banyak IP private ke satu IP publik", "Pemetaan IP private ke IP publik secara acak dari pool", "Pemetaan satu alamat IP privat secara permanen ke satu alamat IP publik (1:1)", "Pemetaan yang tidak menggunakan alamat IP"], correct: 2 },
+            { question: "Kondisi jaringan seperti apa yang paling cocok menggunakan Static NAT?", options: ["Jaringan rumah dengan banyak HP", "Perangkat lokal yang harus selalu bisa diakses dari luar seperti Server Web", "Jaringan publik di kafe", "Komputer klien yang hanya digunakan untuk browsing"], correct: 1 },
+            { question: "Bagaimana cara kerja Dynamic NAT?", options: ["Memetakan IP secara permanen (1:1)", "Memetakan IP privat ke IP publik dari sekumpulan (pool) IP yang tersedia", "Menggunakan port untuk membedakan pengguna", "Menolak koneksi jika tidak memiliki password"], correct: 1 },
+            { question: "Apa kelemahan utama dari penggunaan Dynamic NAT?", options: ["Kecepatannya sangat lambat", "Sangat rentan terhadap peretasan", "Jika pool IP publik habis terpakai, komputer berikutnya harus mengantre", "Tidak bisa digunakan untuk mengakses website"], correct: 2 },
+            { question: "Jenis NAT apa yang paling populer dan digunakan pada jaringan rumah/kantor kecil (SOHO)?", options: ["Static NAT", "Dynamic NAT", "PAT / NAT Overload", "Destination NAT"], correct: 2 },
+            { question: "Bagaimana cara PAT (NAT Overload) membedakan paket data dari banyak komputer yang menggunakan satu IP publik yang sama?", options: ["Dengan menggunakan alamat MAC dari perangkat", "Dengan memanfaatkan nomor port yang berbeda", "Dengan mengubah nama hostname komputer", "Dengan menambahkan password di setiap paket"], correct: 1 },
+            { question: "Tipe NAT berdasarkan arah paket yang berfungsi mengubah IP sumber (Source) saat menuju ke internet disebut...", options: ["Destination NAT (DNAT)", "Port Forwarding", "Source NAT (SNAT) / Masquerade", "Static Routing"], correct: 2 },
+            { question: "Destination NAT (DNAT) biasanya digunakan untuk...", options: ["Memberikan akses internet ke komputer klien", "Mengubah IP tujuan, contohnya pada proses port forwarding ke server", "Menyembunyikan identitas router", "Mengacak urutan pengiriman paket"], correct: 1 },
+            { question: "Ilustrasi berikut: '192.168.1.10 → 202.10.20.30:12345' adalah contoh dari...", options: ["Static NAT", "Dynamic NAT", "NAT Overload (PAT)", "DNAT"], correct: 2 },
+            { question: "Ketika komputer di LAN mengirim permintaan akses web melalui router NAT (PAT), IP asal pada paket diubah menjadi...", options: ["IP tujuan (Destination IP)", "IP Private komputer tersebut", "IP Publik milik router (Inside Global)", "Alamat MAC router"], correct: 2 },
+            { question: "Bagaimana router tahu ke komputer mana paket balasan dari internet harus dikirimkan?", options: ["Dengan menebak secara acak", "Melihat dan mencocokkan data pada Tabel NAT (NAT Table)", "Bertanya kepada ISP", "Mengirimkan ke semua komputer di jaringan (Broadcast)"], correct: 1 },
+            { question: "Kolom apa yang krusial pada NAT Table yang digunakan oleh PAT agar paket tidak tertukar?", options: ["MAC Address", "Nomor Port", "Nama Domain", "Subnet Mask"], correct: 1 },
+            { question: "Manakah yang merupakan keuntungan dari skalabilitas NAT?", options: ["Sulit melacak koneksi dari luar", "Harus membeli IP publik baru", "Mudah menambah perangkat baru di LAN tanpa perlu izin/IP publik tambahan dari ISP", "Proses translasi mempercepat ping"], correct: 2 },
+            { question: "Kelebihan NAT dalam hal kompatibilitas adalah...", options: ["Mendukung semua perangkat tanpa kecuali", "Hanya mendukung sistem operasi Windows", "Kompatibel dan mendukung berbagai jenis protokol jaringan", "Tidak bisa digunakan bersamaan dengan firewall"], correct: 2 },
+            { question: "Salah satu kekurangan NAT adalah terkait komunikasi Peer-to-Peer (P2P), alasannya karena...", options: ["P2P menggunakan terlalu banyak bandwidth", "Aplikasi yang butuh koneksi langsung (end-to-end) kesulitan karena IP disembunyikan", "P2P dilarang oleh pemerintah", "NAT memblokir semua file sharing"], correct: 1 },
+            { question: "Proses pengubahan alamat IP (translasi) pada router dapat menyebabkan...", options: ["Peningkatan kecepatan yang drastis", "Kerusakan pada kabel LAN", "Delay atau penambahan Latency (jeda waktu) pada paket data", "Perubahan data di dalam paket (isi file)"], correct: 2 },
+            { question: "Mengapa NAT dapat membuat proses Troubleshooting jaringan menjadi lebih sulit?", options: ["Karena sulit melacak host yang bermasalah secara langsung dari luar jaringan", "Karena NAT menghapus log router", "Karena tidak ada teknisi yang memahami NAT", "Karena NAT menonaktifkan fitur ping"], correct: 0 },
+            { question: "Apakah NAT sangat diperlukan pada jaringan yang murni menggunakan IPv6?", options: ["Ya, karena IPv6 juga kekurangan alamat", "Ya, untuk mempercepat koneksi", "Tidak, karena jumlah alamat IPv6 sangat melimpah sehingga NAT tidak terlalu dibutuhkan lagi", "Tidak tahu"], correct: 2 },
+            { question: "Tipe NAT apa yang menghubungkan banyak IP private dengan satu IP publik?", options: ["NAT Statis", "NAT Dinamis", "NAT Overload (PAT)", "NAT Pool"], correct: 2 },
+            { question: "Dalam tabel NAT, kombinasi '192.168.1.10:80' merupakan contoh pemetaan yang menggabungkan antara...", options: ["IP Address dan Subnet Mask", "IP Address dan Port Number", "MAC Address dan IP Address", "Nama Domain dan Port Number"], correct: 1 },
+            { question: "Fungsi Load Sharing pada NAT berguna untuk...", options: ["Menghapus IP yang tidak terpakai", "Menggabungkan dua ISP menjadi satu", "Mendistribusikan traffic jaringan secara merata ke beberapa server", "Berbagi file antara dua komputer"], correct: 2 }
         ];
 
-        // Variabel Global
+        // Variabel Global Kuis
         let currentQuestionIndex = 0;
         let score = 0;
-        let userAnswers = []; // Array untuk menyimpan riwayat jawaban (untuk review)
+        let userAnswers = []; 
         let mistakes = 0;
         const maxMistakes = 5;
-        let timeLeft = 15 * 60; // 15 menit dalam detik
+        let timeLeft = 15 * 60; 
         let timerInterval;
         let playerName = "";
 
-        // Elemen DOM
-        const startScreen = document.getElementById('start-screen');
-        const quizContainer = document.getElementById('quiz-container');
-        const resultContainer = document.getElementById('result-container');
-        const questionEl = document.getElementById('question-text');
-        const optionsContainer = document.getElementById('options-container');
-        const progressEl = document.getElementById('question-progress');
-        const currentScoreDisplay = document.getElementById('current-score');
-        const nextBtn = document.getElementById('next-btn');
-        const feedbackEl = document.getElementById('feedback');
-        const finalScoreEl = document.getElementById('final-score');
-        const resultMessageEl = document.getElementById('result-message');
-        const nameInput = document.getElementById('player-name');
-        const nameError = document.getElementById('name-error');
-        const timerDisplay = document.getElementById('timer-display');
-        const mistakesDisplay = document.getElementById('mistakes-display');
-        const resultTitle = document.getElementById('result-title');
-        const displayPlayerName = document.getElementById('display-player-name');
-        const resultIcon = document.getElementById('result-icon');
-        const reviewContainer = document.getElementById('review-container');
-        const reviewList = document.getElementById('review-list');
+        // Fungsi Navigasi Tampilan
+        function hideAllScreens() {
+            document.getElementById('main-menu').classList.add('hidden');
+            document.getElementById('materi-container').classList.add('hidden');
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('result-container').classList.add('hidden');
+        }
 
-        // Fungsi Memulai Kuis
+        function showMenu() {
+            clearInterval(timerInterval);
+            hideAllScreens();
+            document.getElementById('main-menu').classList.remove('hidden');
+        }
+
+        function showMateri() {
+            hideAllScreens();
+            document.getElementById('materi-container').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function showQuizStart() {
+            hideAllScreens();
+            document.getElementById('start-screen').classList.remove('hidden');
+            // Reset input form
+            document.getElementById('player-name').value = '';
+            document.getElementById('name-error').classList.add('hidden');
+            document.getElementById('player-name').classList.remove('border-red-500');
+        }
+
         function startQuiz() {
+            const nameInput = document.getElementById('player-name');
+            const nameError = document.getElementById('name-error');
             playerName = nameInput.value.trim();
+            
             if (!playerName) {
                 nameError.classList.remove('hidden');
                 nameInput.classList.add('border-red-500');
@@ -467,19 +505,17 @@
                 return;
             }
             
-            // Reset input styles
-            nameError.classList.add('hidden');
-            nameInput.classList.remove('border-red-500');
-
-            startScreen.classList.add('hidden');
-            quizContainer.classList.remove('hidden');
+            hideAllScreens();
+            document.getElementById('quiz-container').classList.remove('hidden');
             
+            // Inisialisasi ulang
             currentQuestionIndex = 0;
             score = 0;
             mistakes = 0;
             timeLeft = 15 * 60;
             userAnswers = [];
-            currentScoreDisplay.innerText = score;
+            document.getElementById('current-score').innerText = score;
+            document.getElementById('result-icon').classList.remove('animate-bounce');
             
             updateMistakesDisplay();
             updateTimerDisplay();
@@ -487,13 +523,10 @@
             clearInterval(timerInterval);
             timerInterval = setInterval(timerTick, 1000);
             
-            // Acak urutan pertanyaan
             shuffleArray(quizData);
-            
             loadQuestion();
         }
 
-        // Fungsi Detak Timer
         function timerTick() {
             timeLeft--;
             updateTimerDisplay();
@@ -502,40 +535,36 @@
             }
         }
 
-        // Fungsi Memperbarui UI Timer
         function updateTimerDisplay() {
             const minutes = Math.floor(timeLeft / 60);
             const seconds = timeLeft % 60;
+            const timerDisplay = document.getElementById('timer-display');
             timerDisplay.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
             
-            // Ubah warna timer jadi merah jika sisa waktu <= 1 menit (60 detik)
             const timerBg = timerDisplay.parentElement;
             if (timeLeft <= 60) {
                 timerBg.classList.replace('bg-gray-800', 'bg-red-600');
             } else {
                 timerBg.classList.replace('bg-red-600', 'bg-gray-800');
-                timerBg.classList.add('bg-gray-800'); // Fallback jika replace gagal
+                timerBg.classList.add('bg-gray-800'); // Fallback
             }
         }
 
-        // Fungsi Memperbarui UI Kesalahan
         function updateMistakesDisplay() {
-            mistakesDisplay.innerText = `Kesalahan: ${mistakes} / ${maxMistakes}`;
+            document.getElementById('mistakes-display').innerText = `Kesalahan: ${mistakes} / ${maxMistakes}`;
         }
 
-        // Fungsi Memuat Soal
         function loadQuestion() {
             const currentQ = quizData[currentQuestionIndex];
-            questionEl.innerText = `${currentQuestionIndex + 1}. ${currentQ.question}`;
-            progressEl.innerText = `Pertanyaan ${currentQuestionIndex + 1} dari ${quizData.length}`;
-            optionsContainer.innerHTML = '';
-            feedbackEl.innerHTML = '';
-            nextBtn.classList.add('hidden');
-
-            // Salin array opsi dan tambahkan properti indeks asli untuk validasi
-            const optionsWithOriginalIndex = currentQ.options.map((opt, idx) => ({ text: opt, originalIndex: idx }));
+            document.getElementById('question-text').innerText = `${currentQuestionIndex + 1}. ${currentQ.question}`;
+            document.getElementById('question-progress').innerText = `Pertanyaan ${currentQuestionIndex + 1} dari ${quizData.length}`;
             
-            // Acak urutan opsi pilihan ganda
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+            document.getElementById('feedback').innerHTML = '';
+            document.getElementById('next-btn').classList.add('hidden');
+
+            const optionsWithOriginalIndex = currentQ.options.map((opt, idx) => ({ text: opt, originalIndex: idx }));
             shuffleArray(optionsWithOriginalIndex);
 
             optionsWithOriginalIndex.forEach((optObj) => {
@@ -547,12 +576,11 @@
             });
         }
 
-        // Fungsi Memilih Jawaban
         function selectOption(selectedButton, selectedIndex, selectedText) {
             const currentQ = quizData[currentQuestionIndex];
-            const buttons = optionsContainer.querySelectorAll('button');
+            const buttons = document.getElementById('options-container').querySelectorAll('button');
+            const feedbackEl = document.getElementById('feedback');
             
-            // Nonaktifkan semua tombol agar tidak bisa diklik dua kali
             buttons.forEach(btn => btn.disabled = true);
 
             const isCorrect = selectedIndex === currentQ.correct;
@@ -562,7 +590,7 @@
                 selectedButton.classList.add('correct-answer');
                 feedbackEl.innerHTML = '<span class="text-green-600 flex items-center gap-2">✅ Benar!</span>';
                 score++;
-                currentScoreDisplay.innerText = score;
+                document.getElementById('current-score').innerText = score;
             } else {
                 selectedButton.classList.add('wrong-answer');
                 feedbackEl.innerHTML = '<span class="text-red-600 flex items-center gap-2">❌ Kurang Tepat!</span>';
@@ -570,7 +598,6 @@
                 mistakes++;
                 updateMistakesDisplay();
                 
-                // Highlight/tandai otomatis jawaban yang benar
                 buttons.forEach(btn => {
                     if (btn.innerText === correctAnswerText) {
                         btn.classList.add('correct-answer');
@@ -578,7 +605,6 @@
                 });
             }
 
-            // Simpan riwayat jawaban untuk fitur review di akhir
             userAnswers.push({
                 question: currentQ.question,
                 isCorrect: isCorrect,
@@ -586,16 +612,14 @@
                 correctAnswer: correctAnswerText
             });
 
-            // Cek apakah Game Over akibat batas kesalahan
             if (mistakes >= maxMistakes) {
                 setTimeout(() => handleGameOver("Batas Kesalahan Tercapai (5 Kali Salah)!"), 1500);
-                return; // Hentikan fungsi agar tombol "Selanjutnya" tidak muncul
+                return; 
             }
 
-            nextBtn.classList.remove('hidden');
+            document.getElementById('next-btn').classList.remove('hidden');
         }
 
-        // Lanjut ke Pertanyaan Berikutnya
         function nextQuestion() {
             currentQuestionIndex++;
             if (currentQuestionIndex < quizData.length) {
@@ -605,36 +629,39 @@
             }
         }
 
-        // Fungsi Penanganan Game Over (Gagal)
         function handleGameOver(reason) {
             clearInterval(timerInterval);
-            quizContainer.classList.add('hidden');
-            resultContainer.classList.remove('hidden');
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('result-container').classList.remove('hidden');
             
-            displayPlayerName.innerText = playerName;
-            finalScoreEl.innerText = score;
+            document.getElementById('display-player-name').innerText = playerName;
+            document.getElementById('final-score').innerText = score;
+            
+            const resultIcon = document.getElementById('result-icon');
             resultIcon.innerText = "💀";
-            resultIcon.classList.remove('animate-bounce');
             
+            const resultTitle = document.getElementById('result-title');
             resultTitle.innerText = "Game Over!";
             resultTitle.classList.replace('text-gray-800', 'text-red-600');
             
-            resultMessageEl.innerHTML = `<span class="text-red-600 font-extrabold text-xl">${reason}</span><br><span class="text-sm text-gray-600 mt-2 block">Silakan pelajari lagi materi BAB 12 dan coba kembali.</span>`;
+            document.getElementById('result-message').innerHTML = `<span class="text-red-600 font-extrabold text-xl">${reason}</span><br><span class="text-sm text-gray-600 mt-2 block">Silakan baca <b>Mode Materi</b> lalu coba kuis kembali.</span>`;
 
             renderReview();
         }
 
-        // Fungsi Penanganan Selesai Sukses (Berhasil)
         function showResult() {
             clearInterval(timerInterval);
-            quizContainer.classList.add('hidden');
-            resultContainer.classList.remove('hidden');
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('result-container').classList.remove('hidden');
             
-            displayPlayerName.innerText = playerName;
-            finalScoreEl.innerText = score;
+            document.getElementById('display-player-name').innerText = playerName;
+            document.getElementById('final-score').innerText = score;
+            
+            const resultIcon = document.getElementById('result-icon');
             resultIcon.innerText = "🏆";
             resultIcon.classList.add('animate-bounce');
             
+            const resultTitle = document.getElementById('result-title');
             resultTitle.innerText = "Kuis Selesai!";
             resultTitle.classList.remove('text-red-600');
             resultTitle.classList.add('text-gray-800');
@@ -647,19 +674,20 @@
             } else if (percentage >= 70) {
                 message = "Bagus sekali! 👍 Anda memahami sebagian besar materi NAT.";
             } else if (percentage >= 50) {
-                message = "Cukup baik, 🤔 tapi sepertinya Anda perlu meninjau kembali beberapa konsep NAT.";
+                message = "Cukup baik, 🤔 tapi sepertinya Anda perlu meninjau kembali Mode Materi.";
             } else {
-                message = "Jangan menyerah! 📚 Silakan pelajari kembali materi BAB 12 tentang NAT.";
+                message = "Jangan menyerah! 📚 Silakan pelajari kembali Mode Materi tentang NAT.";
             }
             
-            resultMessageEl.innerText = message;
-
+            document.getElementById('result-message').innerText = message;
             renderReview();
         }
 
-        // Fungsi Render Daftar Jawaban Salah
         function renderReview() {
-            reviewList.innerHTML = ''; // Kosongkan daftar sebelumnya
+            const reviewList = document.getElementById('review-list');
+            const reviewContainer = document.getElementById('review-container');
+            
+            reviewList.innerHTML = ''; 
             const wrongAnswers = userAnswers.filter(ans => !ans.isCorrect);
 
             if (wrongAnswers.length === 0) {
@@ -671,7 +699,7 @@
             reviewContainer.classList.remove('hidden');
             reviewContainer.classList.add('flex');
             
-            wrongAnswers.forEach((ans, index) => {
+            wrongAnswers.forEach((ans) => {
                 const item = document.createElement('div');
                 item.className = 'bg-white p-4 rounded-lg border border-red-200 shadow-sm text-sm';
                 item.innerHTML = `
@@ -691,14 +719,10 @@
             });
         }
 
-        // Fungsi Reset Kuis
         function restartQuiz() {
-            resultContainer.classList.add('hidden');
-            startScreen.classList.remove('hidden');
-            nameInput.value = ''; // Kosongkan form nama
+            showQuizStart();
         }
 
-        // Fungsi Utilitas untuk Mengacak Array (Fisher-Yates Shuffle)
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
