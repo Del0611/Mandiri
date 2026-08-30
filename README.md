@@ -9,7 +9,7 @@ https://netlab.thecybersecguru.com/individual
 
 # LInk 
 
-https://del0611.github.io/Mandiri/
+https://del0611.github.io/12. Pemasangan dan kongfigurasi perangkat jaringan./kuis/01. Konsep NAT (Network Address Translation.html
 
 # Kuis
 
