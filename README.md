@@ -1,3 +1,12 @@
+# Ujian 
+https://script.google.com/macros/s/AKfycbysPQcv286gFF9hdouFA5RSXYKK0QNdsNJgGW9IlO1sASARyayCooeduvR5ADjF_6qYZQ/exec
+
+
+Dilla Sari	 ujian12346	
+Melati ujian123457	
+Nur Fitri Ramadani ujian12345
+
+
 # kuis kelas 12
 https://share.gemini.google/4EERENSOUcOT
 
