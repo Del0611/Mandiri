@@ -18,7 +18,7 @@
 
 Setelah mengikuti sesi pengimbasan ini, peserta mampu:
 
-1. Mengoperasikan papan tulis digital (IFP) dan menyambungkan perangkat laptop/HP.
+1. Mengoperasikan papan tulis digital (PID)/Interactive Flat Panel (IFP) dan menyambungkan perangkat laptop/HP.
 2. Mengelola kelas dan membagikan materi melalui platform Ruang Murid.
 3. Membuat bahan ajar visual interaktif dan kuis digital dengan bantuan teknologi AI.
 4. Menyusun alur pengelolaan kelas berbasis *Learning Management System* (LMS).
