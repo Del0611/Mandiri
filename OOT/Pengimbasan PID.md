@@ -136,11 +136,9 @@ Praktik baik: jangan hanya menilai apakah siswa sudah membuka materi, tetapi per
 
 ## D. Materi 3 — Pembuatan Konten Pembelajaran Digital
 
-[BKKBN: Keluarga perlu bangun kebiasaan sehat anak di ruang digital - ANTARA News](https://images.openai.com/static-rsc-4/OP_afKy8ZCDM4xzSIOkXd2W_xJ4QfI39XUpok-ZG8oyfe3991yJh_HkrN-vHDfsc-8VT5CLTFj24E8TzeLUlOTs7Wrss800PvnokOglQ0YGq14ILn7XE0stbuSa5WmpH3Tbh6GDizPkKODOggPOyCJdg9kLvV5mlgBQVKAQ8EiE?purpose=inline)
+<img width="1200" height="800" alt="image" src="https://github.com/user-attachments/assets/4e3fa31c-3d7e-419a-aadd-9bde93f59d9f" />
 
-[Creator Economy 3.0: transformando a nova geração de criadores](https://images.openai.com/static-rsc-4/L7lab06aziNSHdgQF8s085r4ClLNVhseTxypJHX3_DQ8_-XdKHH0nTcU4v2F8xIedovjKZdB47G5XnLBLYulK0hgrdX0G6f53SVYzfgjsr_CZoUz1Dp4UIEsdD7ercWM7vzhs-hTjzVq4PNSTRYC1RwdPvWtBwUbMjklTnigRFg?purpose=inline)
 
-[How Teachers Create Interactive Lessons with Flipbooks | Blog Flipbooks AI](https://images.openai.com/static-rsc-4/GxdK0DecJkSmgcWHqjYSz2hPSxUvTG-_LobM77cN7cAwNsJJv9n88j2CFxZ2dzbmg00i93FGkwKcCAYdtbVAj5hQ_1t_9bo-5qevPY91NSBS0vLoJKL_39uvI95CJjq9l-TD654zq3lXVvqkFM6BwEjO1bhhKWuK2kkjKGRPeZs?purpose=inline)
 
 11
 
