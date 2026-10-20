@@ -77,13 +77,12 @@ Praktik baik: gunakan IFP untuk mendorong siswa aktif berpikir dan berkolaborasi
 
 ## C. Materi 2 — Pemanfaatan Platform Ruang Murid
 
-[Belajar Lebih Menyenangkan untuk Semua bersama Ruang Murid  - My Framer Site](https://images.openai.com/static-rsc-4/-N281YrRmYf5jAmdY1Zf-EjEsbKi-l4dKAOoI8Co_dJLlI29ANnQm770J8STc_2I3RQSWIwdE69TmjqYMwtOiSRHCYqXKbsfd73NbgoQWpdKMs5pj3kt6GVIA5FNlfaJ-2BnTXfq_yPfeN56Ak3y7m74MuVSbWS9EqmLCFxp-sM?purpose=inline)
+<img width="1543" height="860" alt="image" src="https://github.com/user-attachments/assets/8c44528b-0545-45a4-8dd4-344e6ff037e2" />
 
-[Cara Menggunakan Sumber Belajar di Ruang Murid – Rumah Pendidikan](https://images.openai.com/static-rsc-4/CPoAcTQaA951q1gy9wpf6JrJbpuLEvGgSuw_RpGZ-V5YHvL0tDmT7UUEEuLhOy7juRuWEGPEjExOMn0oL3BezHh5njd0U6ninQJ6mkOEJM8Jf1vqpXHiqOu0taMMe-mEJLhV1BTTOsGazbz93RwQ2nUeZLzb2po8t1oHdKA1CvA?purpose=inline)
+<img width="1228" height="793" alt="image" src="https://github.com/user-attachments/assets/3c22ceff-2e32-4034-9bb0-8989cd4593a4" />
 
-[InfoPublik - Siswa SMPN 28 Jakarta: Rumah Pendidikan Bikin Belajar Lebih Interaktif, Seru dan Mudah Dipahami](https://images.openai.com/static-rsc-4/hfamwe7xL_Cf8pRJ13ISZFWEbiR_kS6JeX48uChGXrKCkra9buoGpaWm1yOdp27jX8jCNjfSTt_QvgNPgHho8eg9uSwQ1CX1ESH-2nqPKPoHDa39jOjCC5_-yNu4p000gOG-4Psi_q4dUak4Pz0suK5bwj_U6IFPg_xHKgrrbcU?purpose=inline)
+<img width="1147" height="860" alt="image" src="https://github.com/user-attachments/assets/54b754eb-2d0c-4ba1-a849-02d77fae8bd0" />
 
-9
 
 ### 1. Pengertian Ruang Murid
 
