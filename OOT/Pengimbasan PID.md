@@ -29,7 +29,7 @@ Setelah mengikuti sesi pengimbasan ini, peserta mampu:
 
 | No | Perangkat / Alat | Keterangan |
 | --- | --- | --- |
-| **1** | Interactive Flat Panel (IFP) | Papan tulis digital interaktif di lokasi pelatihan |
+| **1** | papan tulis digital (PID) | Papan tulis digital interaktif di lokasi pelatihan |
 | **2** | Laptop & Kabel HDMI / Dongle Wireless | Dibawa oleh masing-masing peserta |
 | **3** | Koneksi Internet / Wi-Fi | Akses stabil untuk seluruh peserta |
 | **4** | Akun Guru & Platform Pembelajaran | Akun Ruang Murid, Canva/AI Tools |
@@ -38,7 +38,7 @@ Setelah mengikuti sesi pengimbasan ini, peserta mampu:
 
 ## 🚀 Alur Kegiatan Pelatihan (Step-by-Step)
 
-1. **Eksplorasi Papan Tulis Digital (IFP):** Durasi: 45 Menit.
+1. **Eksplorasi papan tulis digital (PID):** Durasi: 45 Menit.
 **Aktivitas Utama:**
 
 * **Mengenal Layar Sentuh:** Menyalakan IFP, menggunakan stylus/pena digital, memilih warna tinta, dan menggunakan fitur penghapus telapak tangan.
