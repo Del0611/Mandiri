@@ -10,13 +10,13 @@ Pengimbasan hasil Bimbingan Teknis (Bimtek) merupakan kegiatan berbagi pengetahu
 
 ## B. Materi 1 — Eksplorasi Interactive Flat Panel (IFP) / Papan Interaktif Digital (PID)
 
-[Top Global Interactive Flat Panel Brands for Schools in 2026 | Teachmint X](https://images.openai.com/static-rsc-4/J6i4q-WAM7AAPaUoC0FjVj0Z6lHPzPJXhGWHdy521FUAer0HDPneEEtDFH8Xk5WLWDkR4L5mFWMg6QwYUtC_xXx_fxuntyrHONsWxtudWXkZYQ3Y5vPcm4DiI477zB4RShNG6AmRzE-2VdRvdAaDI1kw-FRORio-_cZQclblcVQ?purpose=inline)
+<img width="1000" height="806" alt="image" src="https://github.com/user-attachments/assets/1e6c54b5-8922-4cda-9f64-78fa743b0c2d" />
 
-[Samsung ra mắt Bảng tương tác Android WAF series, hỗ trợ giáo dục trực quan](https://images.openai.com/static-rsc-4/EO1C8Clkywoge9Uiyaz-UotRNF4gso3NJ9y6ZgH0_rhSniYwzlNGz1TftYggHr1HAeOX_-AUv9aaJgVdAj9R1ugGbXWiWozuIL8lCXCUk1EN3LxfrdF1UUiFOiBv5l1AoKKl2bOZL3laqmwbxeKchHuXn95YxVf1XyHBGN4f868?purpose=inline)
+<img width="1415" height="860" alt="image" src="https://github.com/user-attachments/assets/fc8e76a6-de7e-49d3-897e-d20a6fb3bae4" />
 
-[SMART Board RX Series 86" K-12 ONLY – Smartboards.com](https://images.openai.com/static-rsc-4/csafR3_qY7-76s06ZHlGI4rG8RaL1TlJfzTJYAAaxmTtaKfgUGZs4SmVhrsQkb2mwDiJZEPwOpPU-lmXidvfR9kEz6G5Mo3OmcEAxApyeSJNjTsrIaB5h09pFc7B-rqqSnLpCpfTC9pMR2xrZpN1SceM3EjL-PhR-WSaKdGkWkY?purpose=inline)
 
-12
+<img width="1192" height="667" alt="image" src="https://github.com/user-attachments/assets/995f734a-6282-4de4-9418-0f586082df8f" />
+
 
 ### 1. Pengertian IFP/PID
 
