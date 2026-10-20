@@ -5,12 +5,12 @@ Topik: Pemanfaatan Interactive Flat Panel (IFP), Ruang Murid, Pembuatan Konten P
 ## Hasil yang Diharapkan
 Setelah pelaksanaan pengimbasan, diharapkan:
 
-Guru mampu mengoperasikan dan memanfaatkan IFP/PID secara optimal.
-Guru memanfaatkan Ruang Murid dalam pembelajaran.
-Guru mampu membuat konten pembelajaran digital yang menarik dan interaktif.
-Guru mampu mengelola pembelajaran digital secara efektif.
-Terjadi peningkatan pemanfaatan teknologi dalam proses pembelajaran.
-Terbentuk ekosistem digitalisasi pembelajaran yang berkelanjutan di sekolah dan wilayah sasaran.
+- Guru mampu mengoperasikan dan memanfaatkan IFP/PID secara optimal.
+- Guru memanfaatkan Ruang Murid dalam pembelajaran.
+- Guru mampu membuat konten pembelajaran digital yang menarik dan interaktif.
+- Guru mampu mengelola pembelajaran digital secara efektif.
+- Terjadi peningkatan pemanfaatan teknologi dalam proses pembelajaran.
+- Terbentuk ekosistem digitalisasi pembelajaran yang berkelanjutan di sekolah dan wilayah sasaran.
 
 ## A. Pendahuluan
 
