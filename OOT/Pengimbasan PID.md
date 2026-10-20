@@ -2,6 +2,16 @@
 
 Topik: Pemanfaatan Interactive Flat Panel (IFP), Ruang Murid, Pembuatan Konten Pembelajaran, dan Pengelolaan Pembelajaran Digital
 
+## Hasil yang Diharapkan
+Setelah pelaksanaan pengimbasan, diharapkan:
+
+Guru mampu mengoperasikan dan memanfaatkan IFP/PID secara optimal.
+Guru memanfaatkan Ruang Murid dalam pembelajaran.
+Guru mampu membuat konten pembelajaran digital yang menarik dan interaktif.
+Guru mampu mengelola pembelajaran digital secara efektif.
+Terjadi peningkatan pemanfaatan teknologi dalam proses pembelajaran.
+Terbentuk ekosistem digitalisasi pembelajaran yang berkelanjutan di sekolah dan wilayah sasaran.
+
 ## A. Pendahuluan
 
 Digitalisasi pembelajaran merupakan upaya memanfaatkan teknologi digital untuk meningkatkan kualitas proses belajar mengajar. Melalui teknologi, guru dapat menyampaikan materi dengan lebih menarik, interaktif, dan mudah dipahami oleh peserta didik. Teknologi juga membantu guru menyediakan sumber belajar yang beragam, melaksanakan asesmen, serta memantau perkembangan belajar siswa.
